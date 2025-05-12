@@ -27,6 +27,70 @@ const Hero: React.FC = () => {
 
       <div className="container mx-auto px-4 min-h-[calc(100vh-80px)] flex items-center">
         <div className="flex flex-col lg:flex-row items-center w-full gap-6 lg:gap-12">
+          {/* Mobile Images */}
+          <div className="lg:hidden w-full flex justify-center items-center gap-8 relative">
+            <motion.div
+              className="relative w-[140px] aspect-[3/4]"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <motion.div
+                animate={{
+                  y: [0, 10, 0],
+                  rotate: [0, 5, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
+                className="w-full h-full"
+              >
+                <Image
+                  src="/pcelica.png"
+                  alt="Alveon AI Visualization"
+                  className="object-contain  scale-x-[-1]"
+                  fill
+                  priority
+                  sizes="140px"
+                />
+              </motion.div>
+            </motion.div>
+            <motion.div
+              className="relative w-[140px] aspect-[3/4]"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.div
+                animate={{
+                  y: [0, -10, 0],
+                  rotate: [0, -5, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="w-full h-full"
+              >
+                <Image
+                  src="/pcelica.png"
+                  alt="Alveon AI Visualization"
+                  className="object-contain "
+                  fill
+                  priority
+                  sizes="140px"
+                />
+              </motion.div>
+            </motion.div>
+
+            {/* Connecting Line */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-0.5 bg-blue-400/30"></div>
+          </div>
+
           {/* Left Column - Text Content */}
           <motion.div
             className="flex-1 lg:pr-10 text-center lg:text-left mb-4 lg:mb-0"
@@ -80,7 +144,7 @@ const Hero: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Image */}
+          {/* Desktop Image */}
           <motion.div
             className="flex-1 w-full hidden lg:flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
