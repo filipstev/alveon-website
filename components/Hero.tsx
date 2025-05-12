@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
                 iconPosition="right"
                 className="bg-blue-500 hover:bg-blue-600"
               >
-                Get Started
+                Get In Touch
               </Button>
               <Button
                 variant="outline"

@@ -5,6 +5,7 @@ import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Button from "./Button";
 import Image from "next/image";
+
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -77,7 +78,8 @@ const Header: React.FC = () => {
       transition={{ duration: 0.3 }}
       className="fixed top-0 left-0 w-full z-50 text-white"
     >
-      <div className="container mx-auto px-4 h-full flex items-center justify-between">
+      <div className="absolute inset-0 bg-[#19234B] opacity-85 backdrop-blur-md"></div>
+      <div className="container mx-auto px-4 h-full flex items-center justify-between relative">
         <a href="#" className="flex items-center">
           <Image
             src={"/logoo.png"}
@@ -95,7 +97,7 @@ const Header: React.FC = () => {
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className="font-medium hover:text-blue-300 transition-colors"
+                  className="text-base font-medium hover:text-blue-300 transition-colors"
                 >
                   {item.label}
                 </a>
@@ -106,13 +108,13 @@ const Header: React.FC = () => {
             variant="outline"
             className="border-blue-400 text-blue-400 hover:bg-blue-900/20"
           >
-            Get Started
+            Get In Touch
           </Button>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white p-2 hover:bg-blue-900/20 rounded-lg transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -127,13 +129,13 @@ const Header: React.FC = () => {
           animate="open"
           className="absolute top-full left-0 w-full bg-[#19234B] md:hidden"
         >
-          <div className="container mx-auto px-4 py-8">
-            <ul className="flex flex-col space-y-6">
+          <div className="container mx-auto px-4 py-6">
+            <ul className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <motion.li key={item.label} variants={menuItemVariants}>
                   <a
                     href={item.href}
-                    className="text-xl font-medium text-white hover:text-blue-300 transition-colors block py-3 px-4 rounded-lg hover:bg-blue-900/20"
+                    className="text-lg font-medium text-white hover:text-blue-300 transition-colors block py-3 px-4 rounded-lg hover:bg-blue-900/20"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
@@ -141,12 +143,12 @@ const Header: React.FC = () => {
                 </motion.li>
               ))}
             </ul>
-            <motion.div variants={menuItemVariants}>
+            <motion.div variants={menuItemVariants} className="mt-6">
               <Button
                 variant="outline"
-                className="mt-8 w-full border-blue-400 text-blue-400 hover:bg-blue-900/20"
+                className="w-full border-blue-400 text-blue-400 hover:bg-blue-900/20"
               >
-                Get Started
+                Get In Touch
               </Button>
             </motion.div>
           </div>
