@@ -6,6 +6,7 @@ import SectionTitle from "./SectionTitle";
 import Button from "./Button";
 import { Send, Mail, Phone, MapPin } from "lucide-react";
 import { motion } from "motion/react";
+import HexagonPattern from "./HexagonPattern";
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -221,36 +222,41 @@ const Contact: React.FC = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-[#19234B] text-white rounded-xl p-8">
-              <h3 className="text-2xl font-bold mb-8">Get in Touch</h3>
+            <div className="bg-[#19234B] text-white rounded-xl p-8 relative overflow-hidden">
+              <div className="opacity-5">
+                <HexagonPattern />
+              </div>
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold mb-8">Get in Touch</h3>
 
-              <div className="space-y-6">
-                {contactInfo.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={
-                      inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }
-                    }
-                    transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                  >
-                    <div className="bg-blue-600/20 p-3 rounded-lg mr-4">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-300 mb-1">
-                        {item.title}
-                      </h4>
-                      <a
-                        href={item.link}
-                        className="text-lg text-white hover:text-blue-300 transition-colors"
-                      >
-                        {item.details}
-                      </a>
-                    </div>
-                  </motion.div>
-                ))}
+                <div className="space-y-6">
+                  {contactInfo.map((item, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex items-start"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={
+                        inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }
+                      }
+                      transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                    >
+                      <div className="bg-blue-600/20 p-3 rounded-lg mr-4">
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-300 mb-1">
+                          {item.title}
+                        </h4>
+                        <a
+                          href={item.link}
+                          className="text-lg text-white hover:text-blue-300 transition-colors"
+                        >
+                          {item.details}
+                        </a>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>

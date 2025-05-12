@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
+import HexagonPattern from "./HexagonPattern";
+import WavePattern from "./WavePattern";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -52,9 +54,13 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-[#19234B] text-white pt-16 pb-8">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
+    <footer className="bg-[#19234B] text-white pt-16 pb-8 relative overflow-hidden">
+      <WavePattern flipped />
+      <div className="opacity-5">
+        <HexagonPattern />
+      </div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12 pt-20">
           {/* Logo and Company Info */}
           <div className="lg:col-span-2">
             <Image

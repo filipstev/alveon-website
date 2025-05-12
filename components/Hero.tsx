@@ -5,6 +5,8 @@ import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Button from "./Button";
 import Image from "next/image";
+import HexagonPattern from "./HexagonPattern";
+import WavePattern from "./WavePattern";
 
 const Hero: React.FC = () => {
   return (
@@ -18,16 +20,8 @@ const Hero: React.FC = () => {
         <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-purple-600 blur-3xl"></div>
 
         {/* Hexagonal Pattern */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div
-            className="absolute top-0 left-0 w-full h-full"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0L100 28.87V86.6L50 115.47L0 86.6V28.87L50 0z' fill='none' stroke='%23ffffff' stroke-width='2' stroke-opacity='0.3'/%3E%3C/svg%3E")`,
-              backgroundSize: "100px 100px",
-              opacity: 0.3,
-              transform: "rotate(30deg)",
-            }}
-          ></div>
+        <div className="opacity-40">
+          <HexagonPattern />
         </div>
       </div>
 
@@ -122,17 +116,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="w-full h-[80px] md:h-[100px] lg:h-[120px] text-gray-50 fill-current"
-        >
-          <path d="M0,120V73.71c47.79-22.2,103.59-32.17,158-28,70.36,5.37,136.33,33.31,206.8,37.5C438.64,87.57,512.34,66.33,583,47.95c69.27-18,138.3-24.88,209.4-13.08,36.15,6,69.85,17.84,104.45,29.34C989.49,95,1113,134.29,1200,67.53V120Z"></path>
-        </svg>
-      </div>
+      <WavePattern />
     </section>
   );
 };
