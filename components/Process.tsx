@@ -38,53 +38,121 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="process" className="py-32 bg-white">
+      <div className="container mx-auto px-4 max-w-7xl">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Our <span className="text-blue-400">Process</span>
           </h2>
-          <p className="text-base text-gray-600 max-w-xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             A systematic approach to delivering AI solutions that drive real
             business value.
           </p>
         </motion.div>
 
-        <div
-          ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative"
-            >
-              <div className="bg-white p-6 rounded-lg border border-gray-200 hover:border-blue-200 transition-all duration-300 hover:shadow-lg h-full">
-                <div className="flex flex-col h-full">
-                  <div className="p-3 rounded-lg bg-blue-50 w-fit mb-4">
-                    {step.icon}
-                  </div>
-                  <div className="absolute -top-3 -left-3 w-8 h-8 bg-blue-400 text-white rounded-full flex items-center justify-center font-bold">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 flex-grow">
-                    {step.description}
-                  </p>
+        <div ref={ref} className="relative">
+          {/* Timeline line with animation */}
+          <motion.div
+            className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-100 hidden lg:block"
+            initial={{ scaleY: 0 }}
+            animate={inView ? { scaleY: 1 } : { scaleY: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            style={{ transformOrigin: "top" }}
+          />
+
+          <div className="space-y-12 lg:space-y-0">
+            {steps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.2,
+                  ease: "easeOut",
+                }}
+                className="relative"
+              >
+                <div className="lg:grid lg:grid-cols-2 lg:gap-8 items-center">
+                  {/* Left side (even) or Right side (odd) */}
+                  <motion.div
+                    className={`lg:col-span-1 ${
+                      index % 2 === 0 ? "lg:text-right" : "lg:order-2"
+                    }`}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{
+                      duration: 0.6,
+                      delay: index * 0.2 + 0.3,
+                      ease: "easeOut",
+                    }}
+                  >
+                    <div className="bg-white p-8 rounded-xl border border-gray-200 hover:border-blue-200 transition-all duration-300 hover:shadow-xl">
+                      <div className="flex flex-col h-full">
+                        <motion.div
+                          className="p-3 rounded-xl bg-blue-50 w-fit mb-6 group-hover:bg-blue-100 transition-colors duration-300"
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          {step.icon}
+                        </motion.div>
+                        <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                          {step.title}
+                        </h3>
+                        <p className="text-base text-gray-600">
+                          {step.description}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Center dot with animation */}
+                  <motion.div
+                    className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-white rounded-full border-4 border-blue-400 z-10"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.2 + 0.1,
+                      ease: "easeOut",
+                    }}
+                  >
+                    <div className="w-full h-full flex items-center justify-center text-blue-400 font-bold text-lg">
+                      {index + 1}
+                    </div>
+                  </motion.div>
+
+                  {/* Mobile dot with animation */}
+                  <motion.div
+                    className="lg:hidden absolute -left-4 top-8 w-8 h-8 bg-white rounded-full border-4 border-blue-400 z-10"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.2 + 0.1,
+                      ease: "easeOut",
+                    }}
+                  >
+                    <div className="w-full h-full flex items-center justify-center text-blue-400 font-bold text-sm">
+                      {index + 1}
+                    </div>
+                  </motion.div>
+
+                  {/* Empty space for layout */}
+                  <div className="hidden lg:block lg:col-span-1" />
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
