@@ -13,7 +13,7 @@ const WavePattern: React.FC<WavePatternProps> = ({
     <div
       className={`absolute ${
         flipped ? "top-0" : "bottom-0"
-      } left-0 w-full overflow-hidden ${className}`}
+      } left-0 w-full overflow-hidden hidden md:block ${className}`}
     >
       <svg
         data-name="Layer 1"
