@@ -9,7 +9,7 @@ import Image from "next/image";
 const Hero: React.FC = () => {
   return (
     <section
-      className="relative bg-[#1C1F44] text-white overflow-hidden min-h-screen"
+      className="relative bg-[#19234B] text-white overflow-hidden min-h-[calc(100vh-80px)] pt-16 lg:pt-20"
       id="hero"
     >
       {/* Background Elements */}
@@ -18,27 +18,27 @@ const Hero: React.FC = () => {
         <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-purple-600 blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 h-screen flex items-center">
-        <div className="flex flex-col lg:flex-row items-center w-full">
+      <div className="container mx-auto px-4 min-h-[calc(100vh-80px)] flex items-center">
+        <div className="flex flex-col lg:flex-row items-center w-full gap-6 lg:gap-12">
           {/* Left Column - Text Content */}
           <motion.div
-            className="flex-1 lg:pr-10 text-center lg:text-left mb-10 lg:mb-0"
+            className="flex-1 lg:pr-10 text-center lg:text-left mb-4 lg:mb-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 md:mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Transforming Business <br />
+              Transforming Business <br className="hidden sm:block" />
               <span className="text-blue-400">With AI Innovation</span>
             </motion.h1>
 
             <motion.p
-              className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0"
+              className="text-base md:text-lg lg:text-xl text-gray-300 mb-4 md:mb-8 max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
@@ -75,13 +75,13 @@ const Hero: React.FC = () => {
 
           {/* Right Column - Image */}
           <motion.div
-            className="flex-1 w-full h-full flex items-center justify-center"
+            className="flex-1 w-full hidden lg:flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <motion.div
-              className="relative z-10 w-full aspect-[3/4] max-w-2xl"
+              className="relative z-10 w-full max-w-[500px] xl:max-w-[600px] aspect-[3/4]"
               animate={{
                 y: [0, -15, 0],
               }}
@@ -96,6 +96,8 @@ const Hero: React.FC = () => {
                 alt="Alveon AI Visualization"
                 className="object-contain"
                 fill
+                priority
+                sizes="(min-width: 1280px) 600px, 500px"
               />
             </motion.div>
 

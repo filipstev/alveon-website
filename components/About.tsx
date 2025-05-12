@@ -116,7 +116,7 @@ interface StatCardProps {
 const StatCard: React.FC<StatCardProps> = ({ value, label, index, inView }) => {
   return (
     <motion.div
-      className="bg-[#1C1F44] rounded-lg p-6 text-center text-white"
+      className="bg-[#19234B] rounded-lg p-6 text-center text-white"
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}

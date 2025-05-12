@@ -205,7 +205,7 @@ const Contact: React.FC = () => {
 
                 <Button
                   variant="primary"
-                  className="w-full py-3 bg-[#1C1F44] hover:bg-[#2a2e64]"
+                  className="w-full py-3 bg-[#19234B] hover:bg-[#1f2a5c]"
                   icon={<Send size={16} />}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
@@ -221,7 +221,7 @@ const Contact: React.FC = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-[#1C1F44] text-white rounded-xl p-8">
+            <div className="bg-[#19234B] text-white rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-8">Get in Touch</h3>
 
               <div className="space-y-6">
@@ -251,30 +251,6 @@ const Contact: React.FC = () => {
                     </div>
                   </motion.div>
                 ))}
-              </div>
-
-              <div className="mt-10">
-                <h4 className="font-medium text-gray-300 mb-4">Follow Us</h4>
-                <div className="flex space-x-4">
-                  {["twitter", "linkedin", "facebook", "instagram"].map(
-                    (social, index) => (
-                      <motion.a
-                        key={social}
-                        href="#"
-                        className="bg-blue-600/20 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"
-                        whileHover={{ y: -3 }}
-                        whileTap={{ scale: 0.95 }}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={
-                          inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
-                        }
-                        transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
-                      >
-                        <i className={`fab fa-${social}`}></i>
-                      </motion.a>
-                    )
-                  )}
-                </div>
               </div>
             </div>
           </motion.div>

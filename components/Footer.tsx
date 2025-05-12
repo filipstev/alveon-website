@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import { Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
+
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
@@ -42,8 +44,15 @@ const Footer: React.FC = () => {
     },
   ];
 
+  const socialIcons = [
+    { icon: <Twitter size={20} />, href: "#" },
+    { icon: <Linkedin size={20} />, href: "#" },
+    { icon: <Facebook size={20} />, href: "#" },
+    { icon: <Instagram size={20} />, href: "#" },
+  ];
+
   return (
-    <footer className="bg-[#1C1F44] text-white pt-16 pb-8">
+    <footer className="bg-[#19234B] text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           {/* Logo and Company Info */}
@@ -60,18 +69,16 @@ const Footer: React.FC = () => {
               innovation and business growth.
             </p>
             <div className="flex space-x-4">
-              {["twitter", "linkedin", "facebook", "instagram"].map(
-                (social) => (
-                  <a
-                    key={social}
-                    href="#"
-                    className="text-gray-400 hover:text-white transition-colors"
-                    aria-label={`${social} link`}
-                  >
-                    <i className={`fab fa-${social}`}></i>
-                  </a>
-                )
-              )}
+              {socialIcons.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  className="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center text-gray-300 hover:bg-blue-500 hover:text-white transition-all duration-300"
+                  aria-label={`Social media link ${index + 1}`}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
 
