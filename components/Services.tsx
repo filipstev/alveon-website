@@ -21,40 +21,40 @@ import Button from "./Button";
 
 const services = [
   {
-    title: "AI Chatbots",
+    title: "Chatbots & AI Assistants",
     description:
-      "Custom chatbots trained on your business data to provide 24/7 support to your customers.",
+      "*Available 24/7. Always learning. Never tired.* Whether it's customer support or lead generation, we build bots that work like part of your team.",
     icon: <Bot className="w-8 h-8 text-blue-400" />,
   },
   {
-    title: "Process Automation",
+    title: "AI Automation",
     description:
-      "Automate repetitive tasks and workflows to increase efficiency and reduce human error.",
+      "Let machines handle the busywork, so your team can focus on growth. We design custom automations that eliminate repetitive tasks and free up time.",
     icon: <Cpu className="w-8 h-8 text-blue-400" />,
   },
   {
-    title: "AI Strategy Consulting",
+    title: "AI Consulting & Training",
     description:
-      "Expert guidance on integrating AI into your business operations and strategy.",
+      "Not sure where to start? We’ll show you. We help teams understand, adopt, and thrive with AI - through workshops, strategy, and hands-on support.",
     icon: <BarChart3 className="w-8 h-8 text-blue-400" />,
   },
   {
-    title: "Machine Learning Solutions",
+    title: "Web & App Development",
     description:
-      "Custom ML models designed to solve your specific business challenges.",
-    icon: <Brain className="w-8 h-8 text-blue-400" />,
-  },
-  {
-    title: "Data Analysis",
-    description:
-      "Extract meaningful insights from your data to drive better business decisions.",
+      "Smart products. Built to grow with you. From sleek websites to powerful apps, we develop digital platforms that scale.",
     icon: <FileSpreadsheet className="w-8 h-8 text-blue-400" />,
   },
   {
-    title: "Content Generation",
+    title: "Content Creation with AI",
     description:
-      "Generate high-quality content for your business to improve your SEO and engage with customers.",
+      "Create more. Think less. Stay on brand. Generate high-quality content for your business to improve your SEO and engage with customers.",
     icon: <Pen className="w-8 h-8 text-blue-400" />,
+  },
+  {
+    title: "Custom AI solutions",
+    description:
+      "Have a wild idea? We’ll help build it. Our team co-creates tailored AI tools that solve your unique challenges.",
+    icon: <Brain className="w-8 h-8 text-blue-400" />,
   },
 ];
 

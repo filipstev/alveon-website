@@ -104,8 +104,9 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Transforming Business <br className="hidden sm:block" />
-              <span className="text-blue-400">With AI Innovation</span>
+              Automate with Alveon
+              <br className="hidden sm:block" />
+              <span className="text-blue-400">From chaos to coordination </span>
             </motion.h1>
 
             <motion.p
@@ -114,9 +115,9 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Alveon helps enterprises harness the power of artificial
-              intelligence to drive growth, efficiency, and competitive
-              advantage through cutting-edge solutions tailored to your needs.
+              We were overwhelmed by automation once too. Now, we make it
+              accessible and digestible, as well as tailored specifically to
+              your needs and enterprise.
             </motion.p>
 
             <motion.div
