@@ -138,9 +138,10 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              We were overwhelmed by automation once too. Now, we make it
-              accessible and digestible, as well as tailored specifically to
-              your needs and enterprise.
+              We were overwhelmed by AI once too, so we help others cut through
+              the noise. From 24/7 chatbots to custom automations, AI
+              consulting, content creation, and scalable digital products, we
+              make intelligent systems that actually work for you.
             </motion.p>
 
             <motion.div
