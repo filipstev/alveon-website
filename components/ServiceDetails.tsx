@@ -3,8 +3,11 @@
 import React from "react";
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, ArrowUpRight } from "lucide-react";
 import Button from "./Button";
+import Image from "next/image";
+import HexagonPattern from "./HexagonPattern";
+import Link from "next/link";
 
 interface ServiceDetailsProps {
   service: {
@@ -25,134 +28,166 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
   });
 
   return (
-    <section className="py-32 bg-white overflow-hidden">
-      <div className="container-standard">
-        {/* Hero Section */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="inline-block p-3 rounded-xl bg-blue-50 mb-6">
-            {service.icon}
+    <div className="bg-white">
+      {/* Hero Section */}
+      <section className="relative bg-[#19234B] text-white overflow-hidden pt-32 pb-20">
+        {/* Background Elements */}
+        <div className="absolute inset-0 opacity-10 pointer-events-none select-none">
+          <div className="hidden sm:block absolute top-10 left-10 w-64 h-64 rounded-full bg-blue-400 blur-3xl"></div>
+          <div className="hidden sm:block absolute bottom-10 right-10 w-96 h-96 rounded-full bg-purple-600 blur-3xl"></div>
+          <div className="opacity-60">
+            <HexagonPattern />
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            {service.title}
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {service.subtitle}
-          </p>
-        </motion.div>
+        </div>
 
-        {/* Main Content */}
-        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Left Column - Description and Features */}
+        <div className="container-standard relative z-10">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white p-8 rounded-xl border border-gray-200">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                Overview
-              </h2>
-              <p className="text-gray-600 mb-8">{service.description}</p>
-
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Key Features
-              </h3>
-              <ul className="space-y-3">
-                {service.features.map((feature, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-start"
-                  >
-                    <CheckCircle2 className="w-5 h-5 text-blue-400 mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-gray-600">{feature}</span>
-                  </motion.li>
-                ))}
-              </ul>
+            <div className="inline-block p-4 rounded-2xl bg-blue-500/10 mb-8">
+              {service.icon}
             </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              {service.title}
+            </h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              {service.subtitle}
+            </p>
           </motion.div>
+        </div>
+      </section>
 
-          {/* Right Column - Benefits and Use Cases */}
+      {/* Main Content */}
+      <section className="py-20">
+        <div className="container-standard">
+          <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left Column - Description and Features */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+                  Overview
+                </h2>
+                <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+                  {service.description}
+                </p>
+
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">
+                  Key Features
+                </h3>
+                <ul className="space-y-4">
+                  {service.features.map((feature, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={inView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                      className="flex items-start group"
+                    >
+                      <CheckCircle2 className="w-6 h-6 text-blue-400 mt-1 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="text-gray-600 text-lg">{feature}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Right Column - Benefits and Use Cases */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">
+                  Benefits
+                </h3>
+                <ul className="space-y-4">
+                  {service.benefits.map((benefit, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={inView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                      className="flex items-start group"
+                    >
+                      <CheckCircle2 className="w-6 h-6 text-blue-400 mt-1 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="text-gray-600 text-lg">{benefit}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">
+                  Use Cases
+                </h3>
+                <ul className="space-y-4">
+                  {service.useCases.map((useCase, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={inView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
+                      className="flex items-start group"
+                    >
+                      <CheckCircle2 className="w-6 h-6 text-blue-400 mt-1 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <span className="text-gray-600 text-lg">{useCase}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* CTA Section */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
+            className="mt-20 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white p-8 rounded-xl border border-gray-200 mb-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Benefits
-              </h3>
-              <ul className="space-y-3">
-                {service.benefits.map((benefit, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-start"
+            <div className="bg-[#19234B] rounded-2xl p-12 relative overflow-hidden">
+              <div className="absolute inset-0 opacity-10">
+                <HexagonPattern />
+              </div>
+              <div className="relative z-10">
+                <h2 className="text-3xl font-bold text-white mb-6">
+                  Ready to Get Started?
+                </h2>
+                <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
+                  Let's discuss how we can help you implement this solution for
+                  your business.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link
+                    href="/#contact"
+                    className="inline-flex items-center justify-center h-12 px-8 rounded-lg font-medium transition-colors bg-blue-500 text-white hover:bg-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-blue-400 mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-gray-600">{benefit}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-white p-8 rounded-xl border border-gray-200">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Use Cases
-              </h3>
-              <ul className="space-y-3">
-                {service.useCases.map((useCase, index) => (
-                  <motion.li
-                    key={index}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className="flex items-start"
+                    Contact Us
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                  <Link
+                    href="/#services"
+                    className="inline-flex items-center justify-center h-12 px-8 rounded-lg font-medium transition-colors border border-white text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                   >
-                    <CheckCircle2 className="w-5 h-5 text-blue-400 mt-1 mr-3 flex-shrink-0" />
-                    <span className="text-gray-600">{useCase}</span>
-                  </motion.li>
-                ))}
-              </ul>
+                    View All Services
+                    <ArrowUpRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
-
-        {/* CTA Section */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help you implement this solution for your
-            business.
-          </p>
-          <Button
-            variant="primary"
-            size="lg"
-            icon={<ArrowRight size={18} />}
-            iconPosition="right"
-            className="bg-blue-500 hover:bg-blue-600"
-          >
-            Contact Us
-          </Button>
-        </motion.div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 
