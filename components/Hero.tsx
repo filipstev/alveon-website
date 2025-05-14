@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import Button from "./Button";
 import Image from "next/image";
 import HexagonPattern from "./HexagonPattern";
 import WavePattern from "./WavePattern";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -137,15 +137,13 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <Button
-              variant="primary"
-              size="lg"
-              icon={<ArrowRight size={18} />}
-              iconPosition="right"
-              className="bg-blue-500 hover:bg-blue-600"
+            <Link
+              href="/#contact"
+              className="inline-flex items-center justify-center h-12 px-8 rounded-lg font-medium transition-colors bg-blue-500 text-white hover:bg-blue-600"
             >
               Get In Touch
-            </Button>
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </motion.div>
         </motion.div>
 

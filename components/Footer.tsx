@@ -29,11 +29,6 @@ const Footer: React.FC = () => {
       ],
     },
     {
-      title: "Resources",
-      links: [{ label: "Blog", href: "#resources" }],
-    },
-
-    {
       title: "Legal",
       links: [
         { label: "Privacy Policy", href: "#" },

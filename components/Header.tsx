@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { Menu, X } from "lucide-react";
-import Button from "./Button";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -104,12 +103,12 @@ const Header: React.FC = () => {
               </li>
             ))}
           </ul>
-          <Button
-            variant="outline"
-            className="border-blue-400 text-blue-400 hover:bg-blue-900/20"
+          <Link
+            href="/#contact"
+            className="inline-flex items-center justify-center h-10 px-6 rounded-lg font-medium transition-colors border border-blue-400 text-blue-400 hover:bg-blue-900/20"
           >
             Get In Touch
-          </Button>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -133,23 +132,24 @@ const Header: React.FC = () => {
             <ul className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <motion.li key={item.label} variants={menuItemVariants}>
-                  <a
+                  <Link
                     href={item.href}
                     className="text-lg font-medium text-white hover:text-blue-300 transition-colors block py-3 px-4 rounded-lg hover:bg-blue-900/20"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
             </ul>
             <motion.div variants={menuItemVariants} className="mt-6">
-              <Button
-                variant="outline"
-                className="w-full border-blue-400 text-blue-400 hover:bg-blue-900/20"
+              <Link
+                href="/#contact"
+                className="inline-flex items-center justify-center w-full h-10 px-6 rounded-lg font-medium transition-colors border border-blue-400 text-blue-400 hover:bg-blue-900/20"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Get In Touch
-              </Button>
+              </Link>
             </motion.div>
           </div>
         </motion.div>
