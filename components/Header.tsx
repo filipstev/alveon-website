@@ -17,10 +17,10 @@ const Header: React.FC = () => {
   });
 
   const navItems = [
-    { label: "Home", href: "#hero" },
-    { label: "Services", href: "#services" },
-    { label: "Process", href: "#process" },
-    { label: "Contact", href: "#contact" },
+    { label: "Home", href: "/#hero" },
+    { label: "Services", href: "/#services" },
+    { label: "Process", href: "/#process" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   const headerVariants = {
