@@ -206,7 +206,7 @@ const Contact: React.FC = () => {
 
                 <Button
                   variant="primary"
-                  className="w-full py-3 bg-blue-500 hover:bg-blue-600"
+                  className="w-full py-3"
                   icon={<Send size={16} />}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
@@ -222,7 +222,7 @@ const Contact: React.FC = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-[#19234B] text-white rounded-xl p-8 relative overflow-hidden">
+            <div className="bg-primary text-white rounded-xl p-8 relative overflow-hidden">
               <div className="opacity-5">
                 <HexagonPattern />
               </div>

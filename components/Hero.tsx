@@ -7,6 +7,7 @@ import Image from "next/image";
 import HexagonPattern from "./HexagonPattern";
 import WavePattern from "./WavePattern";
 import Link from "next/link";
+import Button from "./Button";
 
 const Hero: React.FC = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -22,12 +23,12 @@ const Hero: React.FC = () => {
 
   return (
     <section
-      className="relative bg-[#19234B] text-white overflow-hidden pt-16 md:pt-24 lg:pt-20 pb-16 md:pb-24"
+      className="relative bg-primary text-white overflow-hidden pt-16 md:pt-24 lg:pt-20 pb-16 md:pb-24"
       id="hero"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10 pointer-events-none select-none">
-        <div className="hidden sm:block absolute top-10 left-10 w-64 h-64 rounded-full bg-blue-400 blur-3xl"></div>
+        <div className="hidden sm:block absolute top-10 left-10 w-64 h-64 rounded-full bg-secondary blur-3xl"></div>
         <div className="hidden sm:block absolute bottom-10 right-10 w-96 h-96 rounded-full bg-purple-600 blur-3xl"></div>
         {/* Hexagonal Pattern */}
         <div className="opacity-60">
@@ -116,7 +117,7 @@ const Hero: React.FC = () => {
                 </motion.span>
               </AnimatePresence>
             </div>
-            <span className="text-blue-400">Grow with Alveon.</span>
+            <span className="text-secondary">Grow with Alveon.</span>
           </motion.h1>
 
           <motion.p
@@ -137,13 +138,15 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <Link
-              href="/#contact"
-              className="inline-flex items-center justify-center h-12 px-8 rounded-lg font-medium transition-colors bg-blue-500 text-white hover:bg-blue-600"
-            >
-              Get In Touch
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            <motion.div whileTap={{ scale: 0.98 }} whileHover={{ scale: 1.02 }}>
+              <Link
+                href="/#contact"
+                className="inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 ease-in-out bg-secondary-foreground hover:bg-secondary text-white shadow-lg hover:shadow-xl h-12 px-8"
+              >
+                Get In Touch
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </motion.div>
           </motion.div>
         </motion.div>
 

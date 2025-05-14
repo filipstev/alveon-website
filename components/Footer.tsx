@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-[#19234B] text-white py-12 relative">
+    <footer className="bg-primary text-white py-12 relative">
       <WavePattern flipped />
       <div className="opacity-5">
         <HexagonPattern />
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center text-gray-300 hover:bg-blue-500 hover:text-white transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center text-gray-300 hover:bg-secondary hover:text-white transition-all duration-300"
                   aria-label={`Social media link ${index + 1}`}
                 >
                   {social.icon}
@@ -77,17 +77,16 @@ const Footer: React.FC = () => {
               ))}
             </div>
           </div>
-
-          {/* Footer Links */}
+          {/* Links */}
           {footerLinks.map((section) => (
-            <div key={section.title}>
-              <h4 className="text-lg font-semibold mb-4">{section.title}</h4>
-              <ul className="space-y-3">
+            <div key={section.title} className="lg:col-span-2">
+              <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
+              <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className="text-gray-300 hover:text-secondary"
                     >
                       {link.label}
                     </a>
@@ -96,35 +95,6 @@ const Footer: React.FC = () => {
               </ul>
             </div>
           ))}
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-gray-800 pt-8 mt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {currentYear} Alveon AI. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
-              >
-                Cookie Settings
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </footer>

@@ -24,7 +24,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   return (
     <motion.div ref={ref} className={`max-w-3xl ${alignmentClasses}`}>
       <motion.span
-        className="block text-blue-500 font-semibold mb-2"
+        className="block text-secondary font-semibold mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
         transition={{ duration: 0.4 }}
@@ -40,7 +40,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
         {title}
       </motion.h2>
       <motion.div
-        className="h-1 w-20 bg-blue-500 rounded-full mx-auto"
+        className="h-1 w-20 bg-secondary rounded-full mx-auto"
         initial={{ opacity: 0, width: 0 }}
         animate={inView ? { opacity: 1, width: 80 } : { opacity: 0, width: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
