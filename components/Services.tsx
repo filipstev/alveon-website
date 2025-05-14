@@ -32,7 +32,7 @@ const services = [
   },
   {
     title: "AI Consulting & Training",
-    subtitle: "Not sure where to start? We'll show you.",
+    subtitle: "Not sure where to start? We’ll show you.",
     description:
       "We help teams understand, adopt, and thrive with AI - through workshops, strategy, and hands-on support.",
     icon: <BarChart3 className="w-8 h-8 text-blue-400" />,
@@ -53,7 +53,7 @@ const services = [
   },
   {
     title: "Custom AI solutions",
-    subtitle: "Have a wild idea? We'll help build it.",
+    subtitle: "Have a wild idea? We’ll help build it.",
     description:
       "Our team co-creates tailored AI tools that solve your unique challenges.",
     icon: <Brain className="w-8 h-8 text-blue-400" />,

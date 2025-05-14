@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "motion/react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Button from "./Button";
 import Image from "next/image";
@@ -9,6 +9,17 @@ import HexagonPattern from "./HexagonPattern";
 import WavePattern from "./WavePattern";
 
 const Hero: React.FC = () => {
+  const [currentWord, setCurrentWord] = useState(0);
+  const words = ["Adapt", "Automate", "Accelerate"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWord((prev) => (prev + 1) % words.length);
+    }, 2000); // Change word every 2 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       className="relative bg-[#19234B] text-white overflow-hidden min-h-[calc(100vh-80px)] pt-16 lg:pt-20"
@@ -104,9 +115,21 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Automate with Alveon
-              <br className="hidden sm:block" />
-              <span className="text-blue-400">From chaos to coordination </span>
+              <div className="h-[1.2em] relative">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={currentWord}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5 }}
+                    className="absolute left-0 right-0"
+                  >
+                    {words[currentWord]}.
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+              <span className="text-blue-400">Grow with Alveon.</span>
             </motion.h1>
 
             <motion.p
