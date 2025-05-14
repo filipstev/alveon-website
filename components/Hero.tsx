@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
                 className="object-contain scale-x-[-1]"
                 fill
                 priority
-                sizes="120px"
+                sizes="200px"
               />
             </motion.div>
           </motion.div>
