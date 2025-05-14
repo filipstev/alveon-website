@@ -12,7 +12,7 @@ import {
   Cpu,
   Pen,
 } from "lucide-react";
-import Button from "./Button";
+import Link from "next/link";
 
 const services = [
   {
@@ -21,6 +21,7 @@ const services = [
     description:
       "Whether it's customer support or lead generation, we build bots that work like part of your team.",
     icon: <Bot className="w-8 h-8 text-blue-400" />,
+    slug: "chatbots-ai-assistants",
   },
   {
     title: "AI Automation",
@@ -29,6 +30,7 @@ const services = [
     description:
       "We design custom automations that eliminate repetitive tasks and free up time.",
     icon: <Cpu className="w-8 h-8 text-blue-400" />,
+    slug: "ai-automation",
   },
   {
     title: "AI Consulting",
@@ -36,6 +38,7 @@ const services = [
     description:
       "We help teams identify real AI opportunities, align with business goals, and build smarter strategies.",
     icon: <BarChart3 className="w-8 h-8 text-blue-400" />,
+    slug: "ai-consulting",
   },
   {
     title: "Education & Training",
@@ -43,6 +46,7 @@ const services = [
     description:
       "From workshops to 1-on-1 sessions, we turn confusion into confidence with understandable, practical guidance.",
     icon: <FileSpreadsheet className="w-8 h-8 text-blue-400" />,
+    slug: "education-training",
   },
   {
     title: "Content Creation with AI",
@@ -50,13 +54,15 @@ const services = [
     description:
       "Generate high-quality content for your business to improve your SEO and engage with customers.",
     icon: <Pen className="w-8 h-8 text-blue-400" />,
+    slug: "content-creation-ai",
   },
   {
     title: "Custom Digital Solutions",
-    subtitle: "Have a wild idea? We’ll help build it.",
+    subtitle: "Have a wild idea? We'll help build it.",
     description:
       "From tailored AI tools to full-stack apps and websites, we co-create digital systems that solve real problems and scale with your business.",
     icon: <Brain className="w-8 h-8 text-blue-400" />,
+    slug: "custom-digital-solutions",
   },
 ];
 
@@ -115,13 +121,13 @@ const Services: React.FC = () => {
                   <p className="text-base text-gray-600 mb-6 flex-grow">
                     {service.description}
                   </p>
-                  <Button
-                    variant="outline"
-                    className="w-full border-blue-400 text-blue-400 hover:bg-blue-50 text-base"
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="inline-flex items-center justify-center w-full h-10 px-6 rounded-lg font-medium transition-colors border border-blue-400 text-blue-400 hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                   >
                     Learn More
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

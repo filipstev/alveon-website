@@ -5,6 +5,7 @@ import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Button from "./Button";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -79,7 +80,7 @@ const Header: React.FC = () => {
       className="fixed top-0 left-0 z-50 w-full text-white"
     >
       <div className="container-standard h-full flex items-center justify-between relative w-full">
-        <a href="#" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Image
             src={"/logoo.png"}
             alt="Alveon Logo"
@@ -87,7 +88,7 @@ const Header: React.FC = () => {
             width={120}
             height={40}
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
