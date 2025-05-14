@@ -20,28 +20,26 @@ const Footer: React.FC = () => {
     {
       title: "Services",
       links: [
-        { label: "AI Strategy", href: "#services" },
-        { label: "Custom Development", href: "#services" },
-        { label: "Predictive Analytics", href: "#services" },
-        { label: "Natural Language Processing", href: "#services" },
+        { label: "Chatbots & AI Assistants", href: "#services" },
+        { label: "AI Automation", href: "#services" },
+        { label: "AI Consulting & Training", href: "#services" },
+        { label: "Web & App Development", href: "#services" },
+        { label: "Content Creation with AI", href: "#services" },
+        { label: "Custom AI solutions", href: "#services" },
       ],
     },
     {
       title: "Resources",
       links: [
-        { label: "Blog", href: "#" },
-        { label: "Case Studies", href: "#case-studies" },
-        { label: "White Papers", href: "#" },
-        { label: "Documentation", href: "#" },
+        { label: "Blog", href: "#resources" },
       ],
     },
+
     {
       title: "Legal",
       links: [
         { label: "Privacy Policy", href: "#" },
         { label: "Terms of Service", href: "#" },
-        { label: "Cookie Policy", href: "#" },
-        { label: "GDPR Compliance", href: "#" },
       ],
     },
   ];
@@ -71,8 +69,7 @@ const Footer: React.FC = () => {
               height={100}
             />
             <p className="text-gray-300 mb-6 max-w-xs">
-              Transforming the future with AI-powered solutions that drive
-              innovation and business growth.
+              A smarter hive for your workflows, agents, and automation.
             </p>
             <div className="flex space-x-4">
               {socialIcons.map((social, index) => (
