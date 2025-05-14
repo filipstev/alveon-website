@@ -206,7 +206,7 @@ const Contact: React.FC = () => {
 
                 <Button
                   variant="primary"
-                  className="w-full py-3 bg-[#19234B] hover:bg-[#1f2a5c]"
+                  className="w-full py-3 bg-blue-500 hover:bg-blue-600"
                   icon={<Send size={16} />}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
