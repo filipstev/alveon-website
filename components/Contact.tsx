@@ -65,13 +65,13 @@ const Contact: React.FC = () => {
     {
       icon: <Phone size={20} />,
       title: "Call Us",
-      details: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      details: "Coming Soon",
+      link: "#",
     },
     {
       icon: <MapPin size={20} />,
       title: "Visit Us",
-      details: "123 AI Boulevard, Tech City, CA 94107",
+      details: "Coming Soon",
       link: "#",
     },
   ];
@@ -174,7 +174,7 @@ const Contact: React.FC = () => {
                     htmlFor="company"
                     className="block text-sm font-medium text-gray-700 mb-1"
                   >
-                    Company Name
+                    Company Name (Optional)
                   </label>
                   <input
                     type="text"
