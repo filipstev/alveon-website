@@ -95,12 +95,12 @@ const Header: React.FC = () => {
           <ul className="flex space-x-8">
             {navItems.map((item) => (
               <li key={item.label}>
-                <a
+                <Link
                   href={item.href}
                   className="text-base font-medium hover:text-blue-300 transition-colors"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
