@@ -193,13 +193,14 @@ const services = {
 };
 
 interface PageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export default function ServicePage({ params }: PageProps) {
-  const service = services[params.slug as keyof typeof services];
+export default async function ServicePage({ params }: PageProps) {
+  const { slug } = await params;
+  const service = services[slug as keyof typeof services];
 
   if (!service) {
     return (
