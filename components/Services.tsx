@@ -5,11 +5,6 @@ import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
 import {
   Brain,
-  Code,
-  BarChart,
-  Globe,
-  ShieldCheck,
-  Database,
   ArrowRight,
   FileSpreadsheet,
   BarChart3,
@@ -70,7 +65,6 @@ const Services: React.FC = () => {
     triggerOnce: true,
     threshold: 0.1,
   });
-
 
   return (
     <section id="services" className="py-32 bg-gray-50">
