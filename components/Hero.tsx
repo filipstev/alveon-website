@@ -36,10 +36,10 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Bees at the very top, visible until md */}
-      <div className="w-full px-4 sm:px-8 md:px-10 md:hidden mb-6 pt-8">
+      <div className="w-full px-4 sm:px-8 md:px-10 md:hidden pt-8">
         <div className="flex justify-center items-center gap-6 max-w-[600px] mx-auto">
           <motion.div
-            className="relative w-[100px] sm:w-[140px] md:w-[140px] aspect-[3/4]"
+            className="relative w-[160px] sm:w-[200px] aspect-[3/4]"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
             </motion.div>
           </motion.div>
           <motion.div
-            className="relative w-[100px] sm:w-[140px] md:w-[140px] aspect-[3/4]"
+            className="relative w-[160px] sm:w-[200px] aspect-[3/4]"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -145,13 +145,6 @@ const Hero: React.FC = () => {
               className="bg-blue-500 hover:bg-blue-600"
             >
               Get In Touch
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white/10"
-            >
-              Learn More
             </Button>
           </motion.div>
         </motion.div>
