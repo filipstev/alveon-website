@@ -1,7 +1,4 @@
-"use client";
-
 import React from "react";
-import { useParams } from "next/navigation";
 import ServiceDetails from "@/components/ServiceDetails";
 import { Bot, Cpu, BarChart3, FileSpreadsheet, Pen, Brain } from "lucide-react";
 
@@ -195,10 +192,14 @@ const services = {
   },
 };
 
-export default function ServicePage() {
-  const params = useParams();
-  const slug = params.slug as string;
-  const service = services[slug as keyof typeof services];
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default function ServicePage({ params }: PageProps) {
+  const service = services[params.slug as keyof typeof services];
 
   if (!service) {
     return (
