@@ -30,9 +30,7 @@ const Footer: React.FC = () => {
     },
     {
       title: "Resources",
-      links: [
-        { label: "Blog", href: "#resources" },
-      ],
+      links: [{ label: "Blog", href: "#resources" }],
     },
 
     {
@@ -52,7 +50,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white py-12 relative">
+    <footer className="bg-[#19234B] text-white py-12 relative">
       <WavePattern flipped />
       <div className="opacity-5">
         <HexagonPattern />

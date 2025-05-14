@@ -8,6 +8,7 @@ import Button from "./Button";
 import Image from "next/image";
 import HexagonPattern from "./HexagonPattern";
 import Link from "next/link";
+import WavePattern from "./WavePattern";
 
 interface ServiceDetailsProps {
   service: {
@@ -28,9 +29,9 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
   });
 
   return (
-    <div className="bg-white">
+    <div className="bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-[#19234B] text-white overflow-hidden pt-32 pb-20">
+      <section className="relative bg-[#19234B] text-white overflow-hidden pt-32 pb-24">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-10 pointer-events-none select-none">
           <div className="hidden sm:block absolute top-10 left-10 w-64 h-64 rounded-full bg-blue-400 blur-3xl"></div>
@@ -39,6 +40,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
             <HexagonPattern />
           </div>
         </div>
+        <WavePattern />
 
         <div className="container-standard relative z-10">
           <motion.div
@@ -149,7 +151,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
 
           {/* CTA Section */}
           <motion.div
-            className="mt-20 text-center"
+            className="mt-20"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
@@ -158,7 +160,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
               <div className="absolute inset-0 opacity-10">
                 <HexagonPattern />
               </div>
-              <div className="relative z-10">
+              <div className="relative z-10 text-center">
                 <h2 className="text-3xl font-bold text-white mb-6">
                   Ready to Get Started?
                 </h2>
