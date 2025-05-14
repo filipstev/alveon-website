@@ -88,7 +88,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="mx-auto px-4 sm:px-8 md:px-10 lg:px-14 xl:px-20 flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 pb-6 lg:py-12 xl:py-8 max-w-[1400px] xl:max-w-[1600px]">
+      <div className="container-standard flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 pb-6 lg:py-12 xl:py-8">
         {/* Left Column - Text Content */}
         <motion.div
           className="w-full flex flex-col justify-center items-center md:items-start text-center md:text-left mb-8 md:mb-0"

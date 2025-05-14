@@ -32,7 +32,7 @@ const services = [
   },
   {
     title: "AI Consulting & Training",
-    subtitle: "Not sure where to start? We’ll show you.",
+    subtitle: "Not sure where to start? We'll show you.",
     description:
       "We help teams understand, adopt, and thrive with AI - through workshops, strategy, and hands-on support.",
     icon: <BarChart3 className="w-8 h-8 text-blue-400" />,
@@ -53,7 +53,7 @@ const services = [
   },
   {
     title: "Custom AI solutions",
-    subtitle: "Have a wild idea? We’ll help build it.",
+    subtitle: "Have a wild idea? We'll help build it.",
     description:
       "Our team co-creates tailored AI tools that solve your unique challenges.",
     icon: <Brain className="w-8 h-8 text-blue-400" />,
@@ -68,7 +68,7 @@ const Services: React.FC = () => {
 
   return (
     <section id="services" className="py-32 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-7xl">
+      <div className="container-standard">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
