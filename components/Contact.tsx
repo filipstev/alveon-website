@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
       {/* Background Decoration */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50 hidden lg:block"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container-standard relative z-10">
         <SectionTitle
           title="Contact Us"
           subtitle="Let's Build Your AI Solution Together"

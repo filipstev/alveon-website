@@ -76,10 +76,9 @@ const Header: React.FC = () => {
       initial="initial"
       animate={isScrolled ? "scrolled" : "initial"}
       transition={{ duration: 0.3 }}
-      className="fixed top-0 left-0 w-full z-50 text-white"
+      className="fixed top-0 left-0 z-50 w-full text-white"
     >
-      <div className="absolute inset-0 bg-[#19234B] opacity-85 backdrop-blur-md"></div>
-      <div className="container mx-auto px-4 h-full flex items-center justify-between relative">
+      <div className="container-standard h-full flex items-center justify-between relative w-full">
         <a href="#" className="flex items-center">
           <Image
             src={"/logoo.png"}
