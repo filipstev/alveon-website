@@ -55,11 +55,11 @@ const Footer: React.FC = () => {
           {/* Logo and Company Info */}
           <div className="lg:col-span-2">
             <Image
-              src={"/logoo.png"}
+              src={"/logo.png"}
               alt="Alveon Logo"
-              className="w-auto ml-[-20px]"
-              width={100}
-              height={100}
+              className="mb-4"
+              width={90}
+              height={24}
             />
             <p className="text-gray-300 mb-6 max-w-xs">
               A smarter hive for your workflows, agents, and automation.

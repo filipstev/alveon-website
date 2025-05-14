@@ -79,14 +79,8 @@ const Header: React.FC = () => {
       className="fixed top-0 left-0 z-50 w-full text-white"
     >
       <div className="container-standard h-full flex items-center justify-between relative w-full">
-        <Link href="/" className="flex items-center">
-          <Image
-            src={"/logoo.png"}
-            alt="Alveon Logo"
-            className="object-left"
-            width={120}
-            height={40}
-          />
+        <Link href="/" className="flex relative items-center ">
+          <Image src={"/logo.png"} alt="Alveon Logo" height={20} width={90} />
         </Link>
 
         {/* Desktop Navigation */}
