@@ -31,17 +31,17 @@ const services = [
     icon: <Cpu className="w-8 h-8 text-blue-400" />,
   },
   {
-    title: "AI Consulting & Training",
-    subtitle: "Not sure where to start? We'll show you.",
+    title: "AI Consulting",
+    subtitle: "Not sure where to start? Let's map the way.",
     description:
-      "We help teams understand, adopt, and thrive with AI - through workshops, strategy, and hands-on support.",
+      "We help teams identify real AI opportunities, align with business goals, and build smarter strategies.",
     icon: <BarChart3 className="w-8 h-8 text-blue-400" />,
   },
   {
-    title: "Web & App Development",
-    subtitle: "Smart products. Built to grow with you.",
+    title: "Education & Training",
+    subtitle: "Empower your team with AI skills that stick.",
     description:
-      "From sleek websites to powerful apps, we develop digital platforms that scale.",
+      "From workshops to 1-on-1 sessions, we turn confusion into confidence with understandable, practical guidance.",
     icon: <FileSpreadsheet className="w-8 h-8 text-blue-400" />,
   },
   {
@@ -52,10 +52,10 @@ const services = [
     icon: <Pen className="w-8 h-8 text-blue-400" />,
   },
   {
-    title: "Custom AI solutions",
-    subtitle: "Have a wild idea? We'll help build it.",
+    title: "Custom Digital Solutions",
+    subtitle: "Have a wild idea? We’ll help build it.",
     description:
-      "Our team co-creates tailored AI tools that solve your unique challenges.",
+      "From tailored AI tools to full-stack apps and websites, we co-create digital systems that solve real problems and scale with your business.",
     icon: <Brain className="w-8 h-8 text-blue-400" />,
   },
 ];

@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Alveon AI",
-  description: "Transforming Business with AI Innovation",
+  description: "A smarter hive for your workflows, agents, and automation.",
 };
 
 export default function RootLayout({
