@@ -22,10 +22,10 @@ const Footer: React.FC = () => {
       links: [
         { label: "Chatbots & AI Assistants", href: "#services" },
         { label: "AI Automation", href: "#services" },
-        { label: "AI Consulting & Training", href: "#services" },
-        { label: "Web & App Development", href: "#services" },
+        { label: "AI Consulting", href: "#services" },
+        { label: "Education & Training", href: "#services" },
         { label: "Content Creation with AI", href: "#services" },
-        { label: "Custom AI solutions", href: "#services" },
+        { label: "Custom Digital Solutions", href: "#services" },
       ],
     },
     {
