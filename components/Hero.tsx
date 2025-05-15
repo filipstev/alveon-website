@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
 
         {/* Right Column - Image (desktop only) */}
         <motion.div
-          className="w-full max-w-[400px] md:max-w-[40%] xl:max-w-[480px] items-center justify-center min-w-0 flex mt-[-70px] md:mt-0"
+          className="w-full max-w-[200px] md:max-w-[40%] xl:max-w-[480px] items-center justify-center min-w-0 flex mt-[-40px] md:mt-0"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
