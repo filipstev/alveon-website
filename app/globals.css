@@ -134,3 +134,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+model-viewer {
+  /* collapse the progress bar entirely */
+  --progress-bar-height: 0px; /* removes the bar’s height */
+  --progress-mask: transparent; /* hides the white mask behind it */
+}
