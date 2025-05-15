@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import HexagonPattern from "./HexagonPattern";
 import WavePattern from "./WavePattern";
 import Link from "next/link";
+import ModelViewerClient from "./ModelViewerClient";
 
 const Hero: React.FC = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
 
   return (
     <section
-      className="relative bg-[#19234B] text-white overflow-hidden pt-16 md:pt-24 lg:pt-20 pb-16 md:pb-24"
+      className="relative bg-[#19234B] text-white overflow-hidden pt-20 md:pt-24 lg:pt-20 pb-16 md:pb-24"
       id="hero"
     >
       {/* Background Elements */}
@@ -35,60 +35,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Bees at the very top, visible until md */}
-      <div className="w-full px-4 sm:px-8 md:px-10 md:hidden pt-8">
-        <div className="flex justify-center items-center gap-6 max-w-[600px] mx-auto">
-          <motion.div
-            className="relative w-[160px] sm:w-[200px] aspect-[3/4]"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0], rotate: [0, 5, 0] }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5,
-              }}
-              className="w-full h-full"
-            >
-              <Image
-                src="/pcelica.png"
-                alt="Alveon AI Visualization"
-                className="object-contain scale-x-[-1]"
-                fill
-                priority
-                sizes="200px"
-              />
-            </motion.div>
-          </motion.div>
-          <motion.div
-            className="relative w-[160px] sm:w-[200px] aspect-[3/4]"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <motion.div
-              animate={{ y: [0, -10, 0], rotate: [0, -5, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="w-full h-full"
-            >
-              <Image
-                src="/pcelica.png"
-                alt="Alveon AI Visualization"
-                className="object-contain"
-                fill
-                priority
-                sizes="120px"
-              />
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
-
-      <div className="container-standard flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12 pb-6 lg:py-12 xl:py-8">
+      <div className="container-standard flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 pt-12 pb-0 lg:py-12 xl:py-8">
         {/* Left Column - Text Content */}
         <motion.div
           className="w-full flex flex-col justify-center items-center md:items-start text-center md:text-left mb-8 md:mb-0"
@@ -149,7 +96,7 @@ const Hero: React.FC = () => {
 
         {/* Right Column - Image (desktop only) */}
         <motion.div
-          className="w-full max-w-[400px] md:max-w-[40%] xl:max-w-[480px] items-center justify-center min-w-0 hidden md:flex"
+          className="w-full max-w-[400px] md:max-w-[40%] xl:max-w-[480px] items-center justify-center min-w-0 flex mt-[-70px] md:mt-0"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -159,14 +106,7 @@ const Hero: React.FC = () => {
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           >
-            <Image
-              src="/pcelica.png"
-              alt="Alveon AI Visualization"
-              className="object-contain"
-              fill
-              priority
-              sizes="(max-width: 767px) 0px, (max-width: 1023px) 50vw, 50vw"
-            />
+            <ModelViewerClient />
           </motion.div>
         </motion.div>
       </div>
