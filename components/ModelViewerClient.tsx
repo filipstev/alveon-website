@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-// Add TypeScript interface for model-viewer
 declare global {
   interface ModelViewerElement extends HTMLElement {
     src: string;
@@ -13,12 +12,7 @@ declare global {
     environmentImage: string;
     cameraOrbit: string;
     poster: string;
-    shadowIntensity: string;
-    exposure: string;
-    shadowSoftness: string;
     interactionPrompt: "auto" | "none";
-    interactionPromptStyle: "basic" | "wiggle";
-    interactionPromptThreshold: string;
   }
 
   interface HTMLElementTagNameMap {
@@ -34,11 +28,7 @@ declare global {
 }
 
 export default function ModelViewerClient() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
   useEffect(() => {
-    // Preload the model-viewer script
     const src =
       "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js";
     if (!document.querySelector(`script[src="${src}"]`)) {
@@ -48,14 +38,6 @@ export default function ModelViewerClient() {
       s.async = true;
       document.head.appendChild(s);
     }
-
-    // Add preload link for the model
-    const preloadLink = document.createElement("link");
-    preloadLink.rel = "preload";
-    preloadLink.as = "fetch";
-    preloadLink.href = "/models/alvi.glb";
-    preloadLink.crossOrigin = "anonymous";
-    document.head.appendChild(preloadLink);
   }, []);
 
   return (
@@ -66,16 +48,11 @@ export default function ModelViewerClient() {
         alt="Alvi"
         camera-controls
         auto-rotate
-        loading="lazy"
+        loading="eager"
         environment-image="neutral"
         camera-orbit="90deg 75deg 2.5m"
         poster="/models/alvi.webp"
-        shadow-intensity="1"
-        exposure="1"
-        shadow-softness="1"
         interaction-prompt="none"
-        onLoad={(e: Event) => setIsLoading(false)}
-        onError={(e: ErrorEvent) => setError("Failed to load 3D model")}
         style={{
           width: "100%",
           height: "100%",
