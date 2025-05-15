@@ -19,9 +19,10 @@ export default function ModelViewerClient() {
     // @ts-ignore
     <model-viewer
       src="/models/alvi.glb"
-      alt="3D product"
+      alt="Alvi"
       camera-controls
       auto-rotate
+      loading="eager"
       camera-orbit="90deg 75deg 2.5m"
       style={{
         width: "100%",
