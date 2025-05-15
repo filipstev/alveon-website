@@ -60,6 +60,7 @@ export default function ModelViewerClient() {
 
   return (
     <div className="relative w-full h-full">
+      {/* @ts-ignore */}
       <model-viewer
         src="/models/alvi.glb"
         alt="Alvi"
