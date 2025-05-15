@@ -23,7 +23,6 @@ export default function ModelViewerClient() {
       camera-controls
       auto-rotate
       camera-orbit="90deg 75deg 2.5m"
-      loading="lazy"
       style={{
         width: "100%",
         height: "100%",
