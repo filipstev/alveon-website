@@ -19,8 +19,19 @@ export default function ModelViewerClient() {
         loading="eager"
         environment-image="neutral"
         camera-orbit="90deg 75deg 2.5m"
-        poster="/models/alvi-poster.png"
+        poster="/models/poster.webp"
         interaction-prompt="none"
+        onload={(event: any) => {
+          console.log("Model load event fired", event);
+          (window as any).modelLoaded = true;
+          console.log(
+            "Model loaded, window.modelLoaded set to:",
+            (window as any).modelLoaded
+          );
+        }}
+        onError={(event: any) => {
+          console.error("Model error event fired", event);
+        }}
         style={{
           width: "100%",
           height: "100%",
