@@ -13,11 +13,6 @@ export default function Hero() {
       <HeroBackground />
       <div className="container-standard flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 pt-12 pb-0 lg:py-12 xl:py-8">
         <HeroContent />
-        <div className="w-full max-w-[200px] md:max-w-[40%] xl:max-w-[480px] items-center justify-center min-w-0 flex mt-[-40px] md:mt-0">
-          <div className="relative w-full aspect-[3/4]">
-            <ModelViewerClient />
-          </div>
-        </div>
       </div>
     </section>
   );

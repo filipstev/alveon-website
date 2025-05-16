@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import ModelViewerClient from "./ModelViewerClient";
 
 // Client component for the animated text
 function AnimatedText() {
@@ -50,42 +51,59 @@ function CTAButton() {
 
 export function HeroContent() {
   return (
-    <motion.div
-      className="w-full flex flex-col justify-center items-center md:items-start text-center md:text-left mb-8 md:mb-0"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <motion.h1
-        className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 md:mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
-        <AnimatedText />
-        <span className="text-secondary">Grow with Alveon.</span>
-      </motion.h1>
-
-      <motion.p
-        className="text-base md:text-lg lg:text-xl text-gray-300 mb-4 md:mb-8 max-w-2xl mx-auto md:mx-0"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        We understand AI can feel overwhelming, so we help others cut through
-        the noise. From 24/7 chatbots to custom automations, AI consulting,
-        content creation, and scalable digital products, we make intelligent
-        systems that actually work for you.
-      </motion.p>
-
+    <>
       <motion.div
-        className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start"
+        className="w-full flex flex-col justify-center items-center md:items-start text-center md:text-left mb-8 md:mb-0"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.6 }}
+        transition={{ duration: 0.5 }}
       >
-        <CTAButton />
+        <motion.h1
+          className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 md:mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <AnimatedText />
+          <span className="text-secondary">Grow with Alveon.</span>
+        </motion.h1>
+
+        <motion.p
+          className="text-base md:text-lg lg:text-xl text-gray-300 mb-4 md:mb-8 max-w-2xl mx-auto md:mx-0"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          We understand AI can feel overwhelming, so we help others cut through
+          the noise. From 24/7 chatbots to custom automations, AI consulting,
+          content creation, and scalable digital products, we make intelligent
+          systems that actually work for you.
+        </motion.p>
+
+        <motion.div
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <CTAButton />
+        </motion.div>
       </motion.div>
-    </motion.div>
+      <motion.div
+        className="w-full max-w-[200px] md:max-w-[40%] xl:max-w-[480px] items-center justify-center min-w-0 flex mt-[-40px] md:mt-0"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="relative w-full aspect-[3/4]"
+        >
+          <ModelViewerClient />
+        </motion.div>
+      </motion.div>
+    </>
   );
 }
