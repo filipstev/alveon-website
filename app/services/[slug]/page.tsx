@@ -196,7 +196,7 @@ const services = {
 };
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
@@ -204,7 +204,7 @@ export function generateStaticParams() {
 }
 
 export default async function ServicePage({ params }: PageProps) {
-  const slug = await params.slug;
+  const { slug } = await params;
   const service = services[slug as keyof typeof services];
 
   if (!service) {
