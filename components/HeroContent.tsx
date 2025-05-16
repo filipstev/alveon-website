@@ -36,12 +36,11 @@ function AnimatedText() {
   );
 }
 
-// Client component for the CTA button
 function CTAButton() {
   return (
     <Link
       href="/#contact"
-      className="inline-flex items-center justify-center h-12 px-8 rounded-lg font-medium transition-colors bg-blue-500 text-white hover:bg-blue-600"
+      className="inline-flex items-center justify-center h-12 px-8 rounded-lg font-medium transition-colors bg-secondary text-white hover:bg-secondary/80"
     >
       Get In Touch
       <ArrowRight className="ml-2 h-5 w-5" />
@@ -64,7 +63,7 @@ export function HeroContent() {
         transition={{ duration: 0.6, delay: 0.1 }}
       >
         <AnimatedText />
-        <span className="text-blue-400">Grow with Alveon.</span>
+        <span className="text-secondary">Grow with Alveon.</span>
       </motion.h1>
 
       <motion.p

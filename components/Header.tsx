@@ -90,7 +90,7 @@ const Header: React.FC = () => {
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="text-base font-medium hover:text-blue-300 transition-colors"
+                  className="text-base font-medium hover:text-secondary transition-colors"
                 >
                   {item.label}
                 </Link>

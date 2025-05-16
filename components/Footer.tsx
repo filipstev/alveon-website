@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center text-gray-300 hover:bg-secondary hover:text-white transition-all duration-300"
+                  className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center text-gray-300 hover:bg-secondary hover:text-white transition-all duration-300"
                   aria-label={`Social media link ${index + 1}`}
                 >
                   {social.icon}
