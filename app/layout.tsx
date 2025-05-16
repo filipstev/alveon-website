@@ -22,9 +22,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preload" href="/models/poster.webp" as="image" />
-      </head>
       <body className={poppins.className}>
         <Header />
         <main>{children}</main>
