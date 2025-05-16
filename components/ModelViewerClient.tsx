@@ -37,16 +37,8 @@ export default function ModelViewerClient() {
         camera-orbit="90deg 75deg 2.5m"
         poster="/models/poster.webp"
         interaction-prompt="none"
-        onload={(event: any) => {
-          console.log("Model load event fired", event);
+        onload={() => {
           (window as any).modelLoaded = true;
-          console.log(
-            "Model loaded, window.modelLoaded set to:",
-            (window as any).modelLoaded
-          );
-        }}
-        onError={(event: any) => {
-          console.error("Model error event fired", event);
         }}
         style={{
           width: "100%",
