@@ -1,45 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
-
-declare global {
-  interface ModelViewerElement extends HTMLElement {
-    src: string;
-    alt: string;
-    cameraControls: boolean;
-    autoRotate: boolean;
-    loading: "auto" | "lazy" | "eager";
-    environmentImage: string;
-    cameraOrbit: string;
-    poster: string;
-    interactionPrompt: "auto" | "none";
-  }
-
-  interface HTMLElementTagNameMap {
-    "model-viewer": ModelViewerElement;
-  }
-
-  namespace JSX {
-    interface IntrinsicElements {
-      "model-viewer": Partial<ModelViewerElement> &
-        React.HTMLAttributes<HTMLElement>;
-    }
-  }
-}
-
 export default function ModelViewerClient() {
-  useEffect(() => {
-    const src =
-      "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js";
-    if (!document.querySelector(`script[src="${src}"]`)) {
-      const s = document.createElement("script");
-      s.src = src;
-      s.type = "module";
-      s.async = true;
-      document.head.appendChild(s);
-    }
-  }, []);
-
   return (
     <div className="relative w-full h-full">
       {/* @ts-ignore */}

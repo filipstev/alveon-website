@@ -6,7 +6,11 @@ import { ArrowRight } from "lucide-react";
 import HexagonPattern from "./HexagonPattern";
 import WavePattern from "./WavePattern";
 import Link from "next/link";
-import ModelViewerClient from "./ModelViewerClient";
+import dynamic from "next/dynamic";
+
+const ModelViewerClient = dynamic(() => import("./ModelViewerClient"), {
+  ssr: false,
+});
 
 const Hero: React.FC = () => {
   const [currentWord, setCurrentWord] = useState(0);
