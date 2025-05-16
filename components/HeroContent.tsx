@@ -4,8 +4,11 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import ModelViewerClient from "./ModelViewerClient";
+import dynamic from "next/dynamic";
 
+const ModelViewerClient = dynamic(() => import("./ModelViewerClient"), {
+  ssr: false,
+});
 // Client component for the animated text
 function AnimatedText() {
   const [currentWord, setCurrentWord] = useState(0);
