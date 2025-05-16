@@ -23,6 +23,7 @@ export default function ModelViewerClient() {
             fill
             className="object-contain"
             priority
+            fetchPriority="high"
           />
         </div>
       )}
