@@ -19,7 +19,7 @@ export default function ModelViewerClient() {
         loading="eager"
         environment-image="neutral"
         camera-orbit="90deg 75deg 2.5m"
-        poster="/models/alvi-poster.webp"
+        poster="/models/alvi-poster.png"
         interaction-prompt="none"
         style={{
           width: "100%",
