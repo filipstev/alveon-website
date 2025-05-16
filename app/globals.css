@@ -134,3 +134,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+model-viewer {
+  --progress-bar-height: 0px;
+  --progress-mask: transparent;
+}

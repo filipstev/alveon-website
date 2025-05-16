@@ -2,6 +2,9 @@ import React from "react";
 import ServiceDetails from "@/components/ServiceDetails";
 import { Bot, Cpu, BarChart3, FileSpreadsheet, Pen, Brain } from "lucide-react";
 
+export const dynamic = "force-static";
+export const revalidate = false;
+
 const services = {
   "chatbots-ai-assistants": {
     title: "Chatbots & AI Assistants",
@@ -193,9 +196,11 @@ const services = {
 };
 
 interface PageProps {
-  params: Promise<{
-    slug: string;
-  }>;
+  params: Promise<{ slug: string }>;
+}
+
+export function generateStaticParams() {
+  return Object.keys(services).map((slug) => ({ slug }));
 }
 
 export default async function ServicePage({ params }: PageProps) {

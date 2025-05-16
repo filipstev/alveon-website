@@ -46,7 +46,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             <div className="inline-block p-4 rounded-2xl bg-secondary/10 mb-8">
