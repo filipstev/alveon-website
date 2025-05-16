@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
-import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -25,11 +24,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://unpkg.com" />
-        <Script
-          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-          strategy="beforeInteractive"
-          type="module"
-        />
         <link rel="preload" href="/models/alvi-poster.webp" as="image" />
         <link
           rel="preload"

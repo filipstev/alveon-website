@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 
 const ModelViewerClient = dynamic(() => import("./ModelViewerClient"), {
   ssr: false,
+  loading: () => <div style={{ width: "100%", height: "100%" }} />,
 });
 
 const Hero: React.FC = () => {

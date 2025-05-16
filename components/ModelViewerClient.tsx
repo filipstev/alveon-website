@@ -1,5 +1,7 @@
 "use client";
 
+import "@google/model-viewer";
+
 export default function ModelViewerClient() {
   return (
     <div className="relative w-full h-full">
