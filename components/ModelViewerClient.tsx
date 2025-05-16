@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect } from "react";
 import("@google/model-viewer");
 
 export default function ModelViewerClient() {
