@@ -24,11 +24,11 @@ const Header: React.FC = () => {
 
   const headerVariants = {
     initial: {
-      backgroundColor: "#19234B",
+      backgroundColor: "var(--primary)",
       height: "80px",
     },
     scrolled: {
-      backgroundColor: "#19234B",
+      backgroundColor: "var(--primary)",
       backdropFilter: "blur(10px)",
       height: "70px",
     },
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="text-base font-medium hover:text-blue-300 transition-colors"
+                  className="text-base font-medium hover:text-secondary transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -99,7 +99,7 @@ const Header: React.FC = () => {
           </ul>
           <Link
             href="/#contact"
-            className="inline-flex items-center justify-center h-10 px-6 rounded-lg font-medium transition-colors border border-blue-400 text-blue-400 hover:bg-blue-900/20"
+            className="inline-flex items-center justify-center h-10 px-6 rounded-lg font-medium transition-colors border border-secondary text-secondary hover:bg-secondary/10"
           >
             Get In Touch
           </Link>
@@ -120,7 +120,7 @@ const Header: React.FC = () => {
           variants={mobileMenuVariants}
           initial="closed"
           animate="open"
-          className="absolute top-full left-0 w-full bg-[#19234B] md:hidden"
+          className="absolute top-full left-0 w-full bg-primary md:hidden"
         >
           <div className="container mx-auto px-4 py-6">
             <ul className="flex flex-col space-y-4">
@@ -139,7 +139,7 @@ const Header: React.FC = () => {
             <motion.div variants={menuItemVariants} className="mt-6">
               <Link
                 href="/#contact"
-                className="inline-flex items-center justify-center w-full h-10 px-6 rounded-lg font-medium transition-colors border border-blue-400 text-blue-400 hover:bg-blue-900/20"
+                className="inline-flex items-center justify-center w-full h-10 px-6 rounded-lg font-medium transition-colors border border-secondary text-secondary hover:bg-secondary/10"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Get In Touch

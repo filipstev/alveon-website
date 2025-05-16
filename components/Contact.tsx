@@ -145,7 +145,7 @@ const Contact: React.FC = () => {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
                       value={formState.name}
                       onChange={handleChange}
                     />
@@ -162,7 +162,7 @@ const Contact: React.FC = () => {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
                       value={formState.email}
                       onChange={handleChange}
                     />
@@ -180,7 +180,7 @@ const Contact: React.FC = () => {
                     type="text"
                     id="company"
                     name="company"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
                     value={formState.company}
                     onChange={handleChange}
                   />
@@ -198,7 +198,7 @@ const Contact: React.FC = () => {
                     name="message"
                     rows={5}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
                     value={formState.message}
                     onChange={handleChange}
                   ></textarea>
@@ -206,7 +206,7 @@ const Contact: React.FC = () => {
 
                 <Button
                   variant="primary"
-                  className="w-full py-3 bg-blue-500 hover:bg-blue-600"
+                  className="w-full py-3"
                   icon={<Send size={16} />}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
@@ -222,7 +222,7 @@ const Contact: React.FC = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-[#19234B] text-white rounded-xl p-8 relative overflow-hidden">
+            <div className="bg-primary text-white rounded-xl p-8 relative overflow-hidden">
               <div className="opacity-5">
                 <HexagonPattern />
               </div>
@@ -240,7 +240,7 @@ const Contact: React.FC = () => {
                       }
                       transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                     >
-                      <div className="bg-blue-600/20 p-3 rounded-lg mr-4">
+                      <div className="bg-secondary/20 p-3 rounded-lg mr-4">
                         {item.icon}
                       </div>
                       <div>
@@ -249,7 +249,7 @@ const Contact: React.FC = () => {
                         </h4>
                         <a
                           href={item.link}
-                          className="text-lg text-white hover:text-blue-300 transition-colors"
+                          className="text-lg text-white hover:text-secondary transition-colors"
                         >
                           {item.details}
                         </a>

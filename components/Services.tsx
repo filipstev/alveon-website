@@ -20,7 +20,7 @@ const services = [
     subtitle: "Available 24/7. Always learning. Never tired.",
     description:
       "Whether it's customer support or lead generation, we build bots that work like part of your team.",
-    icon: <Bot className="w-8 h-8 text-blue-400" />,
+    icon: <Bot className="w-8 h-8 text-secondary" />,
     slug: "chatbots-ai-assistants",
   },
   {
@@ -29,7 +29,7 @@ const services = [
       "Let machines handle the busywork, so your team can focus on growth.",
     description:
       "We design custom automations that eliminate repetitive tasks and free up time.",
-    icon: <Cpu className="w-8 h-8 text-blue-400" />,
+    icon: <Cpu className="w-8 h-8 text-secondary" />,
     slug: "ai-automation",
   },
   {
@@ -37,7 +37,7 @@ const services = [
     subtitle: "Not sure where to start? Let's map the way.",
     description:
       "We help teams identify real AI opportunities, align with business goals, and build smarter strategies.",
-    icon: <BarChart3 className="w-8 h-8 text-blue-400" />,
+    icon: <BarChart3 className="w-8 h-8 text-secondary" />,
     slug: "ai-consulting",
   },
   {
@@ -45,7 +45,7 @@ const services = [
     subtitle: "Empower your team with AI skills that stick.",
     description:
       "From workshops to 1-on-1 sessions, we turn confusion into confidence with understandable, practical guidance.",
-    icon: <FileSpreadsheet className="w-8 h-8 text-blue-400" />,
+    icon: <FileSpreadsheet className="w-8 h-8 text-secondary" />,
     slug: "education-training",
   },
   {
@@ -53,7 +53,7 @@ const services = [
     subtitle: "Create more. Think less. Stay on brand.",
     description:
       "Generate high-quality content for your business to improve your SEO and engage with customers.",
-    icon: <Pen className="w-8 h-8 text-blue-400" />,
+    icon: <Pen className="w-8 h-8 text-secondary" />,
     slug: "content-creation-ai",
   },
   {
@@ -61,7 +61,7 @@ const services = [
     subtitle: "Have a wild idea? We'll help build it.",
     description:
       "From tailored AI tools to full-stack apps and websites, we co-create digital systems that solve real problems and scale with your business.",
-    icon: <Brain className="w-8 h-8 text-blue-400" />,
+    icon: <Brain className="w-8 h-8 text-secondary" />,
     slug: "custom-digital-solutions",
   },
 ];
@@ -82,7 +82,7 @@ const Services: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our AI <span className="text-blue-400">Services</span>
+            Our AI <span className="text-secondary">Services</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             We build intelligent solutions that transform how businesses operate
@@ -123,7 +123,7 @@ const Services: React.FC = () => {
                   </p>
                   <Link
                     href={`/services/${service.slug}`}
-                    className="inline-flex items-center justify-center w-full h-10 px-6 rounded-lg font-medium transition-colors border border-blue-400 text-blue-400 hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                    className="inline-flex items-center justify-center w-full h-10 px-6 rounded-lg font-medium transition-colors border border-secondary text-secondary hover:bg-blue-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
                   >
                     Learn More
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

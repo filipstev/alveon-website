@@ -15,25 +15,25 @@ const ProcessSection = () => {
       title: "Discovery",
       description:
         "We begin by understanding your business needs, challenges, and goals through in-depth consultations and analysis.",
-      icon: <Search className="w-8 h-8 text-blue-400" />,
+      icon: <Search className="w-8 h-8 text-secondary" />,
     },
     {
       title: "Development",
       description:
         "Our team builds custom AI solutions tailored to your specific requirements, using cutting-edge technologies.",
-      icon: <Code className="w-8 h-8 text-blue-400" />,
+      icon: <Code className="w-8 h-8 text-secondary" />,
     },
     {
       title: "Testing",
       description:
         "Rigorous testing ensures your solution meets performance standards and delivers accurate results.",
-      icon: <TestTube className="w-8 h-8 text-blue-400" />,
+      icon: <TestTube className="w-8 h-8 text-secondary" />,
     },
     {
       title: "Deployment",
       description:
         "We implement your solution with minimal disruption and provide ongoing support and optimization.",
-      icon: <Rocket className="w-8 h-8 text-blue-400" />,
+      icon: <Rocket className="w-8 h-8 text-secondary" />,
     },
   ];
 
@@ -47,7 +47,7 @@ const ProcessSection = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our <span className="text-blue-400">Process</span>
+            Our <span className="text-secondary">Process</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             A systematic approach to delivering AI solutions that drive real
@@ -115,7 +115,7 @@ const ProcessSection = () => {
 
                   {/* Center dot with animation */}
                   <motion.div
-                    className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-white rounded-full border-4 border-blue-400 z-10"
+                    className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-white rounded-full border-4 border-secondary z-10"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -125,14 +125,14 @@ const ProcessSection = () => {
                       ease: "easeOut",
                     }}
                   >
-                    <div className="w-full h-full flex items-center justify-center text-blue-400 font-bold text-lg">
+                    <div className="w-full h-full flex items-center justify-center text-secondary font-bold text-lg">
                       {index + 1}
                     </div>
                   </motion.div>
 
                   {/* Mobile dot with animation */}
                   <motion.div
-                    className="lg:hidden absolute -left-4 top-8 w-8 h-8 bg-white rounded-full border-4 border-blue-400 z-10"
+                    className="lg:hidden absolute -left-4 top-8 w-8 h-8 bg-white rounded-full border-4 border-secondary z-10"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -142,7 +142,7 @@ const ProcessSection = () => {
                       ease: "easeOut",
                     }}
                   >
-                    <div className="w-full h-full flex items-center justify-center text-blue-400 font-bold text-sm">
+                    <div className="w-full h-full flex items-center justify-center text-secondary font-bold text-sm">
                       {index + 1}
                     </div>
                   </motion.div>

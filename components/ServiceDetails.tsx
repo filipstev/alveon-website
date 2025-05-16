@@ -31,10 +31,10 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
   return (
     <div className="bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-[#19234B] text-white overflow-hidden pt-32 pb-24">
+      <section className="relative bg-primary text-white overflow-hidden pt-32 pb-24">
         {/* Background Elements */}
         <div className="absolute inset-0 opacity-10 pointer-events-none select-none">
-          <div className="hidden sm:block absolute top-10 left-10 w-64 h-64 rounded-full bg-blue-400 blur-3xl"></div>
+          <div className="hidden sm:block absolute top-10 left-10 w-64 h-64 rounded-full bg-secondary blur-3xl"></div>
           <div className="hidden sm:block absolute bottom-10 right-10 w-96 h-96 rounded-full bg-purple-600 blur-3xl"></div>
           <div className="opacity-60">
             <HexagonPattern />
@@ -49,7 +49,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-block p-4 rounded-2xl bg-blue-500/10 mb-8">
+            <div className="inline-block p-4 rounded-2xl bg-secondary/10 mb-8">
               {service.icon}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -92,7 +92,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                       className="flex items-start group"
                     >
-                      <CheckCircle2 className="w-6 h-6 text-blue-400 mt-1 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <CheckCircle2 className="w-6 h-6 text-secondary mt-1 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
                       <span className="text-gray-600 text-lg">{feature}</span>
                     </motion.li>
                   ))}
@@ -120,7 +120,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                       className="flex items-start group"
                     >
-                      <CheckCircle2 className="w-6 h-6 text-blue-400 mt-1 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <CheckCircle2 className="w-6 h-6 text-secondary mt-1 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
                       <span className="text-gray-600 text-lg">{benefit}</span>
                     </motion.li>
                   ))}
@@ -140,7 +140,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                       className="flex items-start group"
                     >
-                      <CheckCircle2 className="w-6 h-6 text-blue-400 mt-1 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                      <CheckCircle2 className="w-6 h-6 text-secondary mt-1 mr-4 flex-shrink-0 group-hover:scale-110 transition-transform" />
                       <span className="text-gray-600 text-lg">{useCase}</span>
                     </motion.li>
                   ))}
@@ -156,7 +156,7 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-[#19234B] rounded-2xl p-12 relative overflow-hidden">
+            <div className="bg-primary rounded-2xl p-12 relative overflow-hidden">
               <div className="absolute inset-0 opacity-10">
                 <HexagonPattern />
               </div>
@@ -169,13 +169,14 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
                   your business.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/#contact"
-                    className="inline-flex items-center justify-center h-12 px-8 rounded-lg font-medium transition-colors bg-blue-500 text-white hover:bg-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                  <Button
+                    variant="primary"
+                    className="h-12 px-8"
+                    icon={<ArrowRight className="h-5 w-5" />}
+                    iconPosition="right"
                   >
                     Contact Us
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Link>
+                  </Button>
                   <Link
                     href="/#services"
                     className="inline-flex items-center justify-center h-12 px-8 rounded-lg font-medium transition-colors border border-white text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
