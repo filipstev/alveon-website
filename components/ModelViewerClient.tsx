@@ -1,31 +1,15 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
+import { useEffect } from "react";
 
 export default function ModelViewerClient() {
-  const [isModelViewerLoaded, setIsModelViewerLoaded] = useState(false);
-
   useEffect(() => {
     // Dynamically import model-viewer only on client side
-    import("@google/model-viewer").then(() => {
-      setIsModelViewerLoaded(true);
-    });
+    import("@google/model-viewer");
   }, []);
 
   return (
     <div className="relative w-full h-full">
-      {!isModelViewerLoaded && (
-        <div className="absolute inset-0">
-          <Image
-            src="/models/poster.webp"
-            alt="Alvi"
-            fill
-            className="object-contain"
-            priority
-          />
-        </div>
-      )}
       {/* @ts-ignore */}
       <model-viewer
         src="/models/alvi.glb"
