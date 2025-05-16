@@ -203,8 +203,9 @@ export function generateStaticParams() {
   return Object.keys(services).map((slug) => ({ slug }));
 }
 
-export default function ServicePage({ params }: PageProps) {
-  const service = services[params.slug as keyof typeof services];
+export default async function ServicePage({ params }: PageProps) {
+  const slug = await params.slug;
+  const service = services[slug as keyof typeof services];
 
   if (!service) {
     return (
