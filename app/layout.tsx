@@ -23,14 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://unpkg.com" />
         <link rel="preload" href="/models/alvi-poster.webp" as="image" />
-        <link
-          rel="preload"
-          href="/models/alvi.glb"
-          as="fetch"
-          type="model/gltf-binary"
-        />
       </head>
       <body className={poppins.className}>
         <Header />
