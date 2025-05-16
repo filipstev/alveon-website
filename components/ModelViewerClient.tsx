@@ -1,6 +1,6 @@
 "use client";
 
-import("@google/model-viewer");
+import "@google/model-viewer";
 
 export default function ModelViewerClient() {
   return (
