@@ -9,8 +9,8 @@ import path from "path";
     const page = await browser.newPage();
 
     await page.setViewport({
-      width: 1920,
-      height: 1920,
+      width: 800,
+      height: 800,
       deviceScaleFactor: 2,
     });
 
