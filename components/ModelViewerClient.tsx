@@ -42,6 +42,7 @@ export default function ModelViewerClient() {
         alt="Alvi poster"
         fill
         priority
+        sizes="(max-width: 768px) 220px, 400px"
         className="absolute inset-0 w-full h-full object-contain
                    transition-opacity duration-300" /* only fades OUT */
       />
