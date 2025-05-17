@@ -1,8 +1,12 @@
 "use client";
 
-import "@google/model-viewer";
+import { useEffect } from "react";
 
 export default function ModelViewerClient() {
+  useEffect(() => {
+    import("@google/model-viewer");
+  }, []);
+
   return (
     <div className="relative w-full h-full">
       {/* @ts-ignore */}

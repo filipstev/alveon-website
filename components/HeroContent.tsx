@@ -2,12 +2,8 @@
 
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import AnimatedText from "./AnimatedText";
-
-const ModelViewerClient = dynamic(() => import("./ModelViewerClient"), {
-  ssr: false,
-});
+import ModelViewerClient from "./ModelViewerClient";
 
 function CTAButton() {
   return (
