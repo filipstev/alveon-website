@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
 import HexagonPattern from "./HexagonPattern";
 import WavePattern from "./WavePattern";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -93,12 +94,12 @@ const Footer: React.FC = () => {
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-gray-300 hover:text-secondary"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
