@@ -44,7 +44,7 @@ export default function ModelViewerClient() {
         priority
         sizes="(max-width: 768px) 220px, 400px"
         className="absolute inset-0 w-full h-full object-contain
-                   transition-opacity duration-300" /* only fades OUT */
+                   transition-opacity duration-300"
       />
 
       {/* @ts-ignore */}
@@ -53,13 +53,15 @@ export default function ModelViewerClient() {
         src="/models/alvi.glb"
         alt="Alvi"
         camera-controls
+        disable-zoom
+        disable-pan
         auto-rotate
         loading="eager"
         camera-orbit="90deg 75deg 2.5m"
         reveal="auto"
         poster="/models/poster.webp"
         className="absolute inset-0 w-full h-full"
-        style={{ background: "transparent", opacity: 0 }} /* starts hidden */
+        style={{ background: "transparent", opacity: 0 }}
       />
     </div>
   );
