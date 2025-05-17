@@ -3,9 +3,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
-import { ArrowRight, CheckCircle2, ArrowUpRight } from "lucide-react";
-import Button from "./Button";
-import Image from "next/image";
+import { CheckCircle2, ArrowUpRight } from "lucide-react";
 import HexagonPattern from "./HexagonPattern";
 import Link from "next/link";
 import WavePattern from "./WavePattern";
@@ -169,14 +167,12 @@ const ServiceDetails: React.FC<ServiceDetailsProps> = ({ service }) => {
                   your business.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    variant="primary"
-                    className="h-12 px-8"
-                    icon={<ArrowRight className="h-5 w-5" />}
-                    iconPosition="right"
+                  <Link
+                    href="/#contact"
+                    className="inline-flex items-center justify-center h-12 px-8 rounded-lg font-medium transition-colors bg-secondary text-white hover:bg-secondary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                   >
                     Contact Us
-                  </Button>
+                  </Link>
                   <Link
                     href="/#services"
                     className="inline-flex items-center justify-center h-12 px-8 rounded-lg font-medium transition-colors border border-white text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
