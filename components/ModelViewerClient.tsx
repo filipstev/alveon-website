@@ -5,22 +5,29 @@ import Image from "next/image";
 
 export default function ModelViewerClient() {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const mvRef = useRef<any>(null);
+  const mvRef = useRef<any>(null); // <model-viewer>
+  const imgRef = useRef<HTMLImageElement | null>(null); // poster <Image>
 
   useEffect(() => {
     let cleanup: () => void;
+
     (async () => {
       await import("@google/model-viewer");
 
-      // When the actual 3-D model is ready (textures + env),
-      // fade the poster out in the next paint cycle.
       const handleLoad = () => {
+        mvRef.current!.style.opacity = "1";
+
         requestAnimationFrame(() => {
-          containerRef.current?.classList.add("mv-loaded");
+          imgRef.current!.style.opacity = "0";
+        });
+
+        const removePoster = () => imgRef.current?.remove();
+        imgRef.current!.addEventListener("transitionend", removePoster, {
+          once: true,
         });
       };
 
-      mvRef.current?.addEventListener("load", handleLoad);
+      mvRef.current?.addEventListener("load", handleLoad, { once: true });
       cleanup = () => mvRef.current?.removeEventListener("load", handleLoad);
     })();
 
@@ -29,18 +36,16 @@ export default function ModelViewerClient() {
 
   return (
     <div ref={containerRef} className="relative w-full h-full">
-      {/* Poster stays until mv-loaded class appears */}
       <Image
+        ref={imgRef}
         src="/models/poster.webp"
         alt="Alvi poster"
         fill
         priority
         className="absolute inset-0 w-full h-full object-contain
-                   transition-opacity duration-300
-                   [.mv-loaded_&]:opacity-0"
+                   transition-opacity duration-300" /* only fades OUT */
       />
 
-      {/* 3-D model stays invisible until fully loaded */}
       {/* @ts-ignore */}
       <model-viewer
         ref={mvRef}
@@ -52,10 +57,8 @@ export default function ModelViewerClient() {
         camera-orbit="90deg 75deg 2.5m"
         reveal="auto"
         poster="/models/poster.webp"
-        className="absolute inset-0 w-full h-full opacity-0
-                   transition-opacity duration-300
-                   [.mv-loaded_&]:opacity-100"
-        style={{ background: "transparent" }}
+        className="absolute inset-0 w-full h-full"
+        style={{ background: "transparent", opacity: 0 }} /* starts hidden */
       />
     </div>
   );
