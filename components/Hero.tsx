@@ -7,7 +7,7 @@ import ModelViewerClient from "./ModelViewerClient";
 export default function Hero() {
   return (
     <section
-      className="relative bg-[#19234B] text-white overflow-hidden pt-20 md:pt-24 lg:pt-20 pb-16 md:pb-24"
+      className="relative bg-primary text-white overflow-hidden pt-20 md:pt-24 lg:pt-20 pb-16 md:pb-24"
       id="hero"
     >
       <HeroBackground />

@@ -15,9 +15,9 @@ export default function ModelViewerClient() {
         environment-image="neutral"
         camera-orbit="90deg 75deg 2.5m"
         poster="/models/poster.webp"
-        onload={() => {
-          (window as any).modelLoaded = true;
-        }}
+        // onload={() => {
+        //   (window as any).modelLoaded = true;
+        // }}
         style={{
           width: "100%",
           height: "100%",
