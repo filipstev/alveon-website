@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <div className="min-h-screen font-sans">
       <Hero />
-      <About />
-      <SocialProof />
+      {/* <About /> */}
       <Services />
+      <SocialProof />
       <ProcessSection />
       <Contact />
     </div>

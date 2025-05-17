@@ -38,7 +38,7 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="py-32 bg-white overflow-hidden">
+    <section id="process" className="py-32 bg-gray-50 overflow-hidden">
       <div className="container-standard">
         <motion.div
           className="text-center mb-16"
