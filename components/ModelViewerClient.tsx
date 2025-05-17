@@ -1,9 +1,9 @@
-/* components/HeroModel.tsx ---------------------------------------------- */
 "use client";
 
-export default function HeroModel() {
+import "@google/model-viewer";
+
+export default function ModelViewerClient() {
   return (
-    // The wrapper keeps the viewer responsive
     <div className="relative w-full h-full">
       {/* @ts-ignore */}
       <model-viewer

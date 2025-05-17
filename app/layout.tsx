@@ -23,16 +23,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        {/* Load and register the web-component before hydration */}
-        <Script
-          id="model-viewer"
-          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-          strategy="beforeInteractive"
-          type="module"
-          crossOrigin="anonymous"
-        />
-      </head>
       <body className={poppins.className}>
         <Header />
         <main>{children}</main>
