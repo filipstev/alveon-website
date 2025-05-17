@@ -20,12 +20,21 @@ const Footer: React.FC = () => {
     {
       title: "Services",
       links: [
-        { label: "Chatbots & AI Assistants", href: "#services" },
-        { label: "AI Automation", href: "#services" },
-        { label: "AI Consulting", href: "#services" },
-        { label: "Education & Training", href: "#services" },
-        { label: "Content Creation with AI", href: "#services" },
-        { label: "Custom Digital Solutions", href: "#services" },
+        {
+          label: "Chatbots & AI Assistants",
+          href: "/services/chatbots-ai-assistants",
+        },
+        { label: "AI Automation", href: "/services/ai-automation" },
+        { label: "AI Consulting", href: "/services/ai-consulting" },
+        { label: "Education & Training", href: "/services/education-training" },
+        {
+          label: "Content Creation with AI",
+          href: "/services/content-creation-ai",
+        },
+        {
+          label: "Custom Digital Solutions",
+          href: "/services/custom-digital-solutions",
+        },
       ],
     },
     {
@@ -47,11 +56,11 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-primary text-white py-12 relative">
       <WavePattern flipped />
-      <div className="opacity-5">
+      <div className="opacity-8">
         <HexagonPattern />
       </div>
       <div className="container-standard relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12 pt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 pt-20">
           {/* Logo and Company Info */}
           <div className="lg:col-span-2">
             <Image
@@ -79,7 +88,7 @@ const Footer: React.FC = () => {
           </div>
           {/* Links */}
           {footerLinks.map((section) => (
-            <div key={section.title} className="lg:col-span-2">
+            <div key={section.title}>
               <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
               <ul className="space-y-2">
                 {section.links.map((link) => (
