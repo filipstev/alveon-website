@@ -4,6 +4,7 @@ import ProcessSection from "@/components/Process";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import SocialProof from "@/components/SocialProof";
+import AlveonChatbot from "@/components/AlveonChatbot";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <SocialProof />
       <ProcessSection />
       <Contact />
+      <AlveonChatbot />
     </div>
   );
 }
