@@ -91,17 +91,11 @@ export default function AlveonChatbot() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             whileHover={{ scale: 1.05 }}
-            className="w-16 h-16 rounded-full bg-gradient-to-br from-[#34B6E0] to-[#4bb8d4] flex items-center justify-center shadow-lg overflow-hidden"
+            className="w-14 h-14 rounded-full bg-gradient-to-br from-[#34B6E0] to-[#4bb8d4] flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
             onClick={() => setIsMinimized(false)}
             aria-label="Open chat"
           >
-            <Image
-              src="/alvie.png"
-              alt="Alvie"
-              width={64}
-              height={64}
-              className="object-contain"
-            />
+            <MessageSquare className="w-6 h-6 text-white" />
           </motion.button>
         )}
       </AnimatePresence>
