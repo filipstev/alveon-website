@@ -96,7 +96,7 @@ export default function AlveonChatbot() {
             aria-label="Open chat"
           >
             <Image
-              src="/models/poster.webp"
+              src="/alvie.png"
               alt="Alvie"
               width={64}
               height={64}
@@ -122,7 +122,7 @@ export default function AlveonChatbot() {
                 <div className="relative mr-4">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#34B6E0]/80 to-[#4bb8d4] flex items-center justify-center text-white font-bold text-lg border border-white/20 shadow-lg overflow-hidden">
                     <Image
-                      src="/models/poster.webp"
+                      src="/alvie.png"
                       alt="Alvie"
                       width={48}
                       height={48}
@@ -166,20 +166,6 @@ export default function AlveonChatbot() {
                       message.isUser && "justify-end"
                     )}
                   >
-                    {!message.isUser && (
-                      <div className="relative mr-3 flex-shrink-0 transform transition-transform group-hover:scale-105">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#34B6E0]/80 to-[#4bb8d4] flex items-center justify-center text-white font-bold text-sm border border-white/20 overflow-hidden">
-                          <Image
-                            src="/models/poster.webp"
-                            alt="Alvie"
-                            width={40}
-                            height={40}
-                            className="object-contain"
-                          />
-                        </div>
-                      </div>
-                    )}
-
                     <div
                       className={cn(
                         "p-4 max-w-[80%] transform transition-all duration-200 group-hover:translate-y-[-2px] group-hover:shadow-lg rounded-xl",
@@ -200,17 +186,6 @@ export default function AlveonChatbot() {
                     animate={{ y: 0, opacity: 1 }}
                     className="flex items-start mb-4"
                   >
-                    <div className="relative mr-3 flex-shrink-0">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#34B6E0]/80 to-[#4bb8d4] flex items-center justify-center text-white font-bold text-sm border border-white/20 overflow-hidden">
-                        <Image
-                          src="/models/poster.webp"
-                          alt="Alvie"
-                          width={40}
-                          height={40}
-                          className="object-contain"
-                        />
-                      </div>
-                    </div>
                     <div className="bg-[#111827]/80 border border-white/10 p-4 rounded-xl rounded-tl-none">
                       <div className="flex space-x-1">
                         <span className="inline-block w-2 h-2 bg-[#B5C9D9] rounded-full animate-[bounce_1.4s_infinite_0s]"></span>
