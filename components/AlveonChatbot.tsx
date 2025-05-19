@@ -7,6 +7,7 @@ import { Send, X, ChevronDown, MessageSquare } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import HexagonPattern from "./HexagonPattern";
 
 type Message = {
   id: string;
@@ -115,6 +116,9 @@ export default function AlveonChatbot() {
               {/* Header */}
 
               <div className="px-6 py-4 relative flex items-center border-b border-white/10 bg-gradient-to-b from-[#232357]/10 to-[#25235a]/20">
+                <div className="absolute inset-0 opacity-20 overflow-hidden">
+                  <HexagonPattern headerFit size={50} scale={0.6} />
+                </div>
                 <div className="relative mr-4 z-10">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#34B6E0]/80 to-[#4bb8d4] flex items-center justify-center text-white font-bold text-lg border border-white/20 shadow-lg overflow-hidden">
                     <Image
