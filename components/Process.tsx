@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { useInView } from "react-intersection-observer";
-import { Search, Code, TestTube, Rocket } from "lucide-react";
+import { Search, Lightbulb, Code, TestTube, CheckCircle } from "lucide-react";
 
 const ProcessSection = () => {
   const [ref, inView] = useInView({
@@ -12,28 +12,34 @@ const ProcessSection = () => {
 
   const steps = [
     {
-      title: "Discovery",
+      title: "Diagnostics",
       description:
-        "We begin by understanding your business needs, challenges, and goals through in-depth consultations and analysis.",
+        "The first step is understanding what your company actually needs. We take time to hear your ideas, assess your goals, and chart the real challenges, so that we may tackle the problem at hand with full force.",
       icon: <Search className="w-8 h-8 text-secondary" />,
     },
     {
-      title: "Development",
+      title: "Consulting",
       description:
-        "Our team builds custom AI solutions tailored to your specific requirements, using cutting-edge technologies.",
+        "We translate your needs into a realistic, smart strategy. Based on the insights gathered, we define clear action points, recommend the best tools and systems, and prepare a direction that aligns with your goals and resources.",
+      icon: <Lightbulb className="w-8 h-8 text-secondary" />,
+    },
+    {
+      title: "Implementation",
+      description:
+        "With strategy in place, we bring the vision to life. The Alveon team builds and integrates your digital solutions, making sure everything fits seamlessly with your ecosystem.",
       icon: <Code className="w-8 h-8 text-secondary" />,
     },
     {
       title: "Testing",
       description:
-        "Rigorous testing ensures your solution meets performance standards and delivers accurate results.",
+        "Nothing is launched without first being thoroughly tested under real-world conditions. We ensure stability, performance, and readiness to scale. We fix bugs, fine-tune performances and gather your feedback along the way.",
       icon: <TestTube className="w-8 h-8 text-secondary" />,
     },
     {
-      title: "Deployment",
+      title: "Completion",
       description:
-        "We implement your solution with minimal disruption and provide ongoing support and optimization.",
-      icon: <Rocket className="w-8 h-8 text-secondary" />,
+        "Once everything is running smoothly, Alveon hands over your fully functional solution, complete with documentation, training (if needed), and ongoing support options. You're now equipped to thrive and start building your hive.",
+      icon: <CheckCircle className="w-8 h-8 text-secondary" />,
     },
   ];
 
@@ -83,7 +89,7 @@ const ProcessSection = () => {
                   {/* Left side (even) or Right side (odd) */}
                   <motion.div
                     className={`lg:col-span-1 ${
-                      index % 2 === 0 ? "lg:text-right" : "lg:order-2"
+                      index % 2 === 0 ? "lg:text-left" : "lg:order-2"
                     }`}
                     initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
