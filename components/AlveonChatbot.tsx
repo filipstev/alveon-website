@@ -82,7 +82,7 @@ export default function AlveonChatbot() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
       {/* Floating button (visible when chat is minimized) */}
       <AnimatePresence>
         {isMinimized && (
@@ -90,6 +90,7 @@ export default function AlveonChatbot() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.2 }}
             whileHover={{ scale: 1.05 }}
             className="w-14 h-14 rounded-full bg-gradient-to-br from-[#34B6E0] to-[#4bb8d4] flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
             onClick={() => setIsMinimized(false)}
@@ -107,13 +108,14 @@ export default function AlveonChatbot() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 20, opacity: 0 }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            transition={{ duration: 0.2 }}
             className="w-full max-w-sm mb-4"
           >
             <div className="overflow-hidden rounded-xl border border-white/10 shadow-2xl backdrop-blur-md bg-[#19234b]/80">
               {/* Header */}
-              <div className="px-6 py-4 flex items-center border-b border-white/10 bg-gradient-to-b from-[#232357]/10 to-[#25235a]/20">
-                <div className="relative mr-4">
+
+              <div className="px-6 py-4 relative flex items-center border-b border-white/10 bg-gradient-to-b from-[#232357]/10 to-[#25235a]/20">
+                <div className="relative mr-4 z-10">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#34B6E0]/80 to-[#4bb8d4] flex items-center justify-center text-white font-bold text-lg border border-white/20 shadow-lg overflow-hidden">
                     <Image
                       src="/alvie.png"
@@ -125,11 +127,11 @@ export default function AlveonChatbot() {
                   </div>
                   <div className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-500 border-2 border-[#19234b] animate-pulse"></div>
                 </div>
-                <div>
+                <div className="z-10">
                   <h2 className="text-white font-semibold">Alvie</h2>
                   <p className="text-xs text-[#B5C9D9]">Online</p>
                 </div>
-                <div className="ml-auto flex space-x-2">
+                <div className="ml-auto flex space-x-2 z-10">
                   <button
                     onClick={() => setIsMinimized(true)}
                     className="text-[#B5C9D9] hover:text-white transition-colors duration-200"
